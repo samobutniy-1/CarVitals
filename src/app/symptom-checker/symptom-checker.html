@@ -1,0 +1,82 @@
+<h2>Symptom checker</h2>
+<p>Pick the part of your car, then describe what's happening.</p>
+
+<!-- Symptom type -->
+<div>
+  <ul>
+    <li>
+      <button
+        [attr.aria-pressed]="selectedCategory() === 'brakes'"
+        (click)="selectCategory('brakes')"
+      >
+        <span aria-hidden="true">icon</span>
+        <span>Brakes</span>
+      </button>
+    </li>
+    <li>
+      <button
+        [attr.aria-pressed]="selectedCategory() === 'suspension'"
+        (click)="selectCategory('suspension')"
+      >
+        <span aria-hidden="true">icon</span>
+        <span>Suspension</span>
+      </button>
+    </li>
+    <li>
+      <button
+        [attr.aria-pressed]="selectedCategory() === 'engine'"
+        (click)="selectCategory('engine')"
+      >
+        <span aria-hidden="true">icon</span>
+        <span>Engine</span>
+      </button>
+    </li>
+    <li>
+      <button
+        [attr.aria-pressed]="selectedCategory() === 'electrical'"
+        (click)="selectCategory('electrical')"
+      >
+        <span aria-hidden="true">icon</span>
+        <span>Electrical</span>
+      </button>
+    </li>
+  </ul>
+</div>
+
+<!-- Questions section -->
+<div>
+  <div>
+    <span aria-hidden="true">icon</span>
+    <fieldset>
+      <legend>What does it sound/feel like?</legend>
+      @for (option of filteredSymptoms(); track option.value) {
+        <label
+          ><input
+            type="radio"
+            name="symptom"
+            [value]="option.value"
+            (change)="selectSymptom(option.value)"
+          />
+          <span>{{ option.label }}</span></label
+        >
+      }
+    </fieldset>
+  </div>
+</div>
+
+<!-- Likely causes -->
+@if (filteredCauses().length > 0) {
+  <div>
+    <p>Likely causes</p>
+    <ul>
+      @for (cause of filteredCauses(); track cause.symptom) {
+        <li>
+          <p>{{ cause.label }}</p>
+          @if (cause.mostLikely) {
+            <span>Most likely</span>
+          }
+        </li>
+      }
+    </ul>
+  </div>
+}
