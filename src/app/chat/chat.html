@@ -1,0 +1,40 @@
+<div
+  class="chat-window flex flex-col gap-2 p-4 max-h-[400px] overflow-y-auto bg-slate-900 rounded-lg"
+>
+  @for (msg of gemini.messages(); track $index) {
+    <div
+      class="message px-3 py-2 rounded-lg max-w-[70%]"
+      [class.user]="msg.role === 'user'"
+      [class.model]="msg.role === 'model'"
+      [class]="
+        msg.role === 'user'
+          ? 'bg-blue-500 text-white self-end'
+          : 'bg-slate-800 text-slate-200 self-start'
+      "
+    >
+      {{ msg.text }}
+    </div>
+  }
+
+  @if (gemini.loading()) {
+    <div class="message px-3 py-2 rounded-lg max-w-[70%] bg-slate-800 text-slate-200 self-start">
+      Gemini думає...
+    </div>
+  }
+</div>
+
+<div class="chat-input flex gap-2 mt-3">
+  <input
+    [ngModel]="userInput()"
+    (ngModelChange)="userInput.set($event)"
+    (keyup.enter)="send()"
+    placeholder="Напиши питання..."
+    class="flex-1 px-3 py-2 rounded-md border border-slate-700 bg-slate-800 text-white placeholder-slate-400 outline-none focus:border-blue-500"
+  />
+  <button
+    (click)="send()"
+    class="px-4 py-2 rounded-md bg-blue-500 text-white hover:bg-blue-600 transition-colors"
+  >
+    Надіслати
+  </button>
+</div>
