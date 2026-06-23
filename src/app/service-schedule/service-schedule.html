@@ -1,0 +1,31 @@
+<h2>Service schedule</h2>
+<p>Check when it's time to replace the part in question</p>
+<input type="text" [(ngModel)]="searchQuery" placeholder="Search for the part.." />
+<label for="fuelType">Fuel type</label>
+<select id="fuelType" [(ngModel)]="selectedFuel">
+  <option value="petrol">Petrol</option>
+  <option value="diesel">Diesel</option>
+  <option value="lpg">LPG</option>
+</select>
+<p>
+  Values shown are general industry averages and may not reflect your specific vehicle. Always check
+  your vehicle's manufacturer service manual for exact intervals.
+</p>
+<table>
+  <thead>
+    <tr>
+      <th>Part name</th>
+      <th>Recommended replacement interval (km)</th>
+      <th>Recommended replacement interval (months)</th>
+    </tr>
+  </thead>
+  <tbody>
+    @for (item of filteredItems(); track item.id) {
+      <tr>
+        <td>{{ item.name }}</td>
+        <td>{{ item.intervalKm }}</td>
+        <td>{{ item.intervalMonth }}</td>
+      </tr>
+    }
+  </tbody>
+</table>
