@@ -1,0 +1,85 @@
+<section>
+  <h2>Repair tutorials</h2>
+  <div>
+    <p>Vehicle systems</p>
+    <ul>
+      <li>
+        <button
+          [attr.aria-pressed]="selectedSystemId() === 'engine'"
+          (click)="selectSystem('engine')"
+        >
+          Engine
+        </button>
+      </li>
+      <li>
+        <button
+          [attr.aria-pressed]="selectedSystemId() === 'suspension'"
+          (click)="selectSystem('suspension')"
+        >
+          Suspension
+        </button>
+      </li>
+      <li>
+        <button
+          [attr.aria-pressed]="selectedSystemId() === 'brakes'"
+          (click)="selectSystem('brakes')"
+        >
+          Brakes
+        </button>
+      </li>
+      <li>
+        <button
+          [attr.aria-pressed]="selectedSystemId() === 'electrical'"
+          (click)="selectSystem('electrical')"
+        >
+          Electrical
+        </button>
+      </li>
+    </ul>
+  </div>
+  <div>
+    <p>{{ selectedSystem()?.name }} - select a component</p>
+    <ul>
+      @for (tutorial of filteredTutorials(); track tutorial.id) {
+        <li>
+          <button
+            [attr.aria-pressed]="selectedTutorialId() === tutorial.id"
+            (click)="selectTutorial(tutorial.id)"
+          >
+            {{ tutorial.name }}
+          </button>
+        </li>
+      }
+    </ul>
+  </div>
+  <div>
+    @if (selectedTutorial(); as tutorial) {
+      <p>Replacing {{ tutorial.name }}</p>
+      <p>Tools needed:</p>
+      <ul>
+        @for (tool of tutorial.tools; track tool) {
+          <li>{{ tool }}</li>
+        }
+      </ul>
+      <p>Steps</p>
+      <ul>
+        @for (step of tutorial.steps; track step.order) {
+          <li>
+            <span>{{ step.order }}</span>
+            {{ step.text }}
+            @if (step.image) {
+              <img [src]="step.image" [alt]="step.text" />
+            }
+          </li>
+        }
+      </ul>
+      <ul>
+        @for (link of tutorial.links; track link.title) {
+          <li>
+            <a [href]="link.link">{{ link.title }}</a>
+          </li>
+        }
+      </ul>
+    }
+  </div>
+</section>
