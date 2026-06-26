@@ -1,8 +1,16 @@
 import { Component, signal, computed } from '@angular/core';
+import {
+  LucideCircleDot,
+  LucideMoveVertical,
+  LucideCog,
+  LucideZap,
+  LucideHelpCircle,
+} from '@lucide/angular';
 
 @Component({
   selector: 'app-symptom-checker',
-  imports: [],
+  standalone: true,
+  imports: [LucideCircleDot, LucideMoveVertical, LucideCog, LucideZap, LucideHelpCircle],
   templateUrl: './symptom-checker.html',
   styleUrl: './symptom-checker.css',
 })

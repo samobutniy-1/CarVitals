@@ -1,82 +1,174 @@
-<h2>Symptom checker</h2>
-<p>Pick the part of your car, then describe what's happening.</p>
+<section class="flex flex-col justify-center px-4">
+  <h2 class="font-display font-medium text-[42px] mb-1 text-navy">Symptom checker</h2>
+  <p class="font-body font-light text-lg text-text-muted mb-4 max-w-[60%]">
+    Pick the part of your car, then describe what's happening.
+  </p>
 
-<!-- Symptom type -->
-<div>
-  <ul>
-    <li>
-      <button
-        [attr.aria-pressed]="selectedCategory() === 'brakes'"
-        (click)="selectCategory('brakes')"
-      >
-        <span aria-hidden="true">icon</span>
-        <span>Brakes</span>
-      </button>
-    </li>
-    <li>
-      <button
-        [attr.aria-pressed]="selectedCategory() === 'suspension'"
-        (click)="selectCategory('suspension')"
-      >
-        <span aria-hidden="true">icon</span>
-        <span>Suspension</span>
-      </button>
-    </li>
-    <li>
-      <button
-        [attr.aria-pressed]="selectedCategory() === 'engine'"
-        (click)="selectCategory('engine')"
-      >
-        <span aria-hidden="true">icon</span>
-        <span>Engine</span>
-      </button>
-    </li>
-    <li>
-      <button
-        [attr.aria-pressed]="selectedCategory() === 'electrical'"
-        (click)="selectCategory('electrical')"
-      >
-        <span aria-hidden="true">icon</span>
-        <span>Electrical</span>
-      </button>
-    </li>
-  </ul>
-</div>
-
-<!-- Questions section -->
-<div>
+  <!-- Symptom type -->
   <div>
-    <span aria-hidden="true">icon</span>
+    <ul class="grid grid-cols-4 gap-2.5 mb-8">
+      <li>
+        <button
+          [attr.aria-pressed]="selectedCategory() === 'brakes'"
+          (click)="selectCategory('brakes')"
+          class="flex flex-col justify-center items-center w-full shadow-sm bg-white border border-silver-border rounded-2xl p-4 hover:border-accent transition duration-300 cursor-pointer"
+          [class.bg-navy-dark]="selectedCategory() === 'brakes'"
+          [class.border-accent]="selectedCategory() === 'brakes'"
+          [class.bg-white]="selectedCategory() !== 'brakes'"
+          [class.border-silver-border]="selectedCategory() !== 'brakes'"
+        >
+          <svg
+            lucideCircleDot
+            [size]="32"
+            aria-hidden="true"
+            class="text-text-muted p-1 rounded w-fit"
+            [class.text-accent]="selectedCategory() === 'brakes'"
+            [class.text-text-muted]="selectedCategory() !== 'brakes'"
+          ></svg>
+          <span
+            class="font-body font-medium text-xl text-text-muted"
+            [class.text-accent]="selectedCategory() === 'brakes'"
+            [class.text-text-muted]="selectedCategory() !== 'brakes'"
+            >Brakes</span
+          >
+        </button>
+      </li>
+      <li>
+        <button
+          [attr.aria-pressed]="selectedCategory() === 'suspension'"
+          (click)="selectCategory('suspension')"
+          class="flex flex-col justify-center items-center w-full shadow-sm bg-white border border-silver-border rounded-2xl p-4 hover:border-accent transition duration-300 cursor-pointer"
+          [class.bg-navy-dark]="selectedCategory() === 'suspension'"
+          [class.border-accent]="selectedCategory() === 'suspension'"
+          [class.bg-white]="selectedCategory() !== 'suspension'"
+          [class.border-silver-border]="selectedCategory() !== 'suspension'"
+        >
+          <svg
+            lucideMoveVertical
+            [size]="32"
+            aria-hidden="true"
+            class="text-text-muted p-1 rounded w-fit"
+            [class.text-accent]="selectedCategory() === 'suspension'"
+            [class.text-text-muted]="selectedCategory() !== 'suspension'"
+          ></svg>
+          <span
+            class="font-body font-medium text-xl text-text-muted"
+            [class.text-accent]="selectedCategory() === 'suspension'"
+            [class.text-text-muted]="selectedCategory() !== 'suspension'"
+            >Suspension</span
+          >
+        </button>
+      </li>
+      <li>
+        <button
+          [attr.aria-pressed]="selectedCategory() === 'engine'"
+          (click)="selectCategory('engine')"
+          class="flex flex-col justify-center items-center w-full shadow-sm bg-white border border-silver-border rounded-2xl p-4 hover:border-accent transition duration-300 cursor-pointer"
+          [class.bg-navy-dark]="selectedCategory() === 'engine'"
+          [class.border-accent]="selectedCategory() === 'engine'"
+          [class.bg-white]="selectedCategory() !== 'engine'"
+          [class.border-silver-border]="selectedCategory() !== 'engine'"
+        >
+          <svg
+            lucideCog
+            [size]="32"
+            aria-hidden="true"
+            class="text-text-muted p-1 rounded w-fit"
+            [class.text-accent]="selectedCategory() === 'engine'"
+            [class.text-text-muted]="selectedCategory() !== 'engine'"
+          ></svg>
+          <span
+            class="font-body font-medium text-xl text-text-muted"
+            [class.text-accent]="selectedCategory() === 'engine'"
+            [class.text-text-muted]="selectedCategory() !== 'engine'"
+            >Engine</span
+          >
+        </button>
+      </li>
+      <li>
+        <button
+          [attr.aria-pressed]="selectedCategory() === 'electrical'"
+          (click)="selectCategory('electrical')"
+          class="flex flex-col justify-center items-center w-full shadow-sm bg-white border border-silver-border rounded-2xl p-4 hover:border-accent transition duration-300 cursor-pointer"
+          [class.bg-navy-dark]="selectedCategory() === 'electrical'"
+          [class.border-accent]="selectedCategory() === 'electrical'"
+          [class.bg-white]="selectedCategory() !== 'electrical'"
+          [class.border-silver-border]="selectedCategory() !== 'electrical'"
+        >
+          <svg
+            lucideZap
+            [size]="32"
+            aria-hidden="true"
+            class="text-text-muted p-1 rounded w-fit"
+            [class.text-accent]="selectedCategory() === 'electrical'"
+            [class.text-text-muted]="selectedCategory() !== 'electrical'"
+          ></svg>
+          <span
+            class="font-body font-medium text-xl text-text-muted"
+            [class.text-accent]="selectedCategory() === 'electrical'"
+            [class.text-text-muted]="selectedCategory() !== 'electrical'"
+            >Electrical</span
+          >
+        </button>
+      </li>
+    </ul>
+  </div>
+
+  <!-- Questions section -->
+  <div
+    class="flex flex-col w-full shadow-sm bg-white border border-silver-border rounded-2xl p-4 mb-8"
+  >
     <fieldset>
-      <legend>What does it sound/feel like?</legend>
+      <legend class="flex gap-1 items-center mb-4">
+        <svg lucideHelpCircle [size]="24" aria-hidden="true" class="text-navy p-0.5"></svg>
+        <span class="font-body font-medium text-navy text-xl">What does it sound/feel like?</span>
+      </legend>
+
       @for (option of filteredSymptoms(); track option.value) {
         <label
+          class="flex items-center gap-2.5 py-2 px-1 cursor-pointer rounded-xl mb-1"
+          [class.bg-silver-hover]="selectedSymptom() === option.value"
           ><input
             type="radio"
             name="symptom"
             [value]="option.value"
             (change)="selectSymptom(option.value)"
+            class="accent-accent w-4 h-4"
           />
-          <span>{{ option.label }}</span></label
+          <span
+            class="text-lg"
+            [class.text-navy-dark]="selectedSymptom() === option.value"
+            [class.font-medium]="selectedSymptom() === option.value"
+            [class.text-text-muted]="selectedSymptom() !== option.value"
+            >{{ option.label }}</span
+          ></label
         >
       }
     </fieldset>
   </div>
-</div>
 
-<!-- Likely causes -->
-@if (filteredCauses().length > 0) {
-  <div>
-    <p>Likely causes</p>
-    <ul>
-      @for (cause of filteredCauses(); track cause.symptom) {
-        <li>
-          <p>{{ cause.label }}</p>
-          @if (cause.mostLikely) {
-            <span>Most likely</span>
-          }
-        </li>
-      }
-    </ul>
-  </div>
-}
+  <!-- Likely causes -->
+  @if (filteredCauses().length > 0) {
+    <div class="flex flex-col">
+      <p class="font-display font-light text-text-muted text-xl mb-4 pl-1">Likely causes</p>
+      <ul class="flex flex-col gap-3">
+        @for (cause of filteredCauses(); track cause.symptom) {
+          <li
+            class="flex justify-between shadow-sm bg-white border border-silver-border rounded-xl p-4"
+            [class.border-l-3]="cause.mostLikely"
+            [class.border-l-accent]="cause.mostLikely"
+          >
+            <p class="text-lg text-navy-dark m-0" [class.font-medium]="cause.mostLikely">
+              {{ cause.label }}
+            </p>
+            @if (cause.mostLikely) {
+              <span class="font-mono text-[12px] text-accent bg-accent/10 py-1 px-2.5 rounded-full"
+                >Most likely</span
+              >
+            }
+          </li>
+        }
+      </ul>
+    </div>
+  }
+</section>
