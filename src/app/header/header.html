@@ -1,14 +1,56 @@
-<header>
-  <a href="/">
-    <span>icon</span>
-    <span>CarVitals</span>
+<header
+  class="flex justify-between py-3 px-4 items-center bg-silver border-b border-b-silver-border shadow-[0_4px_6px_rgba(0,0,0,0.1)]"
+>
+  <a href="/" class="flex gap-2 items-center justify-center">
+    <svg lucideGauge [size]="20" class="text-navy"></svg>
+    <span class="font-display font-medium text-lg text-navy">CarVitals</span>
   </a>
   <nav aria-label="Main">
-    <ul>
-      <li><a href="">Diagnostics</a></li>
-      <li><a href="">Schedule</a></li>
-      <li><a href="">AI-Chat</a></li>
-      <li><a href="">Tutorials</a></li>
+    <ul class="flex justify-between gap-3 font-mono text-sm">
+      <li>
+        <a
+          href=""
+          class="relative inline-block text-navy pb-1 group hover:text-accent transition duration-300"
+        >
+          Diagnostics
+          <span
+            class="absolute left-0 bottom-0 w-full h-0.5 bg-accent scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100"
+          ></span>
+        </a>
+      </li>
+      <li>
+        <a
+          href=""
+          class="relative inline-block text-navy pb-1 group hover:text-accent transition duration-300"
+        >
+          Schedule
+          <span
+            class="absolute left-0 bottom-0 w-full h-0.5 bg-accent scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100"
+          ></span>
+        </a>
+      </li>
+      <li>
+        <a
+          href=""
+          class="relative inline-block text-navy pb-1 group hover:text-accent transition duration-300"
+        >
+          AI-Chat
+          <span
+            class="absolute left-0 bottom-0 w-full h-0.5 bg-accent scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100"
+          ></span>
+        </a>
+      </li>
+      <li>
+        <a
+          href=""
+          class="relative inline-block text-navy pb-1 group hover:text-accent transition duration-300"
+        >
+          Tutorials
+          <span
+            class="absolute left-0 bottom-0 w-full h-0.5 bg-accent scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100"
+          ></span>
+        </a>
+      </li>
     </ul>
   </nav>
 </header>
