@@ -1,9 +1,10 @@
 import { Component, signal, computed } from '@angular/core';
 import { VehicleSystem, Tutorial, TutorialLink, TutorialStep } from '../models/tutorials.model';
+import { LucideCog, LucideMoveVertical, LucideCircleDot, LucideZap } from '@lucide/angular';
 
 @Component({
   selector: 'app-tutorials',
-  imports: [],
+  imports: [LucideCog, LucideMoveVertical, LucideCircleDot, LucideZap],
   templateUrl: './tutorials.html',
   styleUrl: './tutorials.css',
 })
