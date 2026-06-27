@@ -1,11 +1,12 @@
 import { Component, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { GeminiService } from '../gemini';
+import { LucideWrench, LucideSend } from '@lucide/angular';
 
 @Component({
   selector: 'app-chat',
   standalone: true,
-  imports: [FormsModule],
+  imports: [FormsModule, LucideWrench, LucideSend],
   templateUrl: './chat.html',
 })
 export class ChatComponent {

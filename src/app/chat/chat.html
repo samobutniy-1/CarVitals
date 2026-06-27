@@ -1,40 +1,60 @@
-<div
-  class="chat-window flex flex-col gap-2 p-4 max-h-[400px] overflow-y-auto bg-slate-900 rounded-lg"
->
-  @for (msg of gemini.messages(); track $index) {
-    <div
-      class="message px-3 py-2 rounded-lg max-w-[70%]"
-      [class.user]="msg.role === 'user'"
-      [class.model]="msg.role === 'model'"
-      [class]="
-        msg.role === 'user'
-          ? 'bg-blue-500 text-white self-end'
-          : 'bg-slate-800 text-slate-200 self-start'
-      "
+<div class="flex flex-col h-100 bg-silver border border-silver-border rounded-2xl overflow-hidden">
+  <div class="flex-1 flex flex-col gap-2.5 p-4 overflow-y-auto">
+    @for (msg of gemini.messages(); track $index) {
+      @if (msg.role === 'user') {
+        <div
+          class="self-end max-w-[70%] px-3.5 py-2.5 rounded-2xl rounded-br-sm bg-navy text-silver text-sm leading-relaxed"
+        >
+          {{ msg.text }}
+        </div>
+      } @else {
+        <div class="self-start flex gap-2 max-w-[70%]">
+          <span
+            class="w-6 h-6 rounded-[7px] bg-silver-tint flex items-center justify-center shrink-0 mt-0.5"
+          >
+            <svg lucideWrench [size]="13" class="text-navy"></svg>
+          </span>
+          <div
+            class="px-3.5 py-2.5 rounded-2xl rounded-tl-sm bg-white border border-silver-border text-navy-dark text-sm leading-relaxed"
+          >
+            {{ msg.text }}
+          </div>
+        </div>
+      }
+    }
+
+    @if (gemini.loading()) {
+      <div class="self-start flex gap-2 max-w-[70%]">
+        <span
+          class="w-6 h-6 rounded-[7px] bg-silver-tint flex items-center justify-center shrink-0 mt-0.5"
+        >
+          <svg lucideWrench [size]="13" class="text-navy"></svg>
+        </span>
+        <div
+          class="flex gap-1 px-3.5 py-3 rounded-2xl rounded-tl-sm bg-white border border-silver-border"
+        >
+          <span class="typing-dot"></span>
+          <span class="typing-dot" style="animation-delay: 0.2s"></span>
+          <span class="typing-dot" style="animation-delay: 0.4s"></span>
+        </div>
+      </div>
+    }
+  </div>
+
+  <div class="flex gap-2 p-3 border-t border-silver-border bg-white">
+    <input
+      [ngModel]="userInput()"
+      (ngModelChange)="userInput.set($event)"
+      (keyup.enter)="send()"
+      placeholder="Ask a question..."
+      class="flex-1 px-3.5 py-2.5 rounded-[10px] border border-silver-border bg-silver text-navy-dark placeholder-text-muted outline-none focus:border-accent transition-colors"
+    />
+    <button
+      (click)="send()"
+      class="flex items-center gap-1.5 px-4.5 py-2.5 rounded-[10px] bg-accent text-silver font-medium text-sm hover:opacity-90 transition-opacity cursor-pointer"
     >
-      {{ msg.text }}
-    </div>
-  }
-
-  @if (gemini.loading()) {
-    <div class="message px-3 py-2 rounded-lg max-w-[70%] bg-slate-800 text-slate-200 self-start">
-      Gemini думає...
-    </div>
-  }
-</div>
-
-<div class="chat-input flex gap-2 mt-3">
-  <input
-    [ngModel]="userInput()"
-    (ngModelChange)="userInput.set($event)"
-    (keyup.enter)="send()"
-    placeholder="Напиши питання..."
-    class="flex-1 px-3 py-2 rounded-md border border-slate-700 bg-slate-800 text-white placeholder-slate-400 outline-none focus:border-blue-500"
-  />
-  <button
-    (click)="send()"
-    class="px-4 py-2 rounded-md bg-blue-500 text-white hover:bg-blue-600 transition-colors"
-  >
-    Надіслати
-  </button>
+      <svg lucideSend [size]="15"></svg>
+      Send
+    </button>
+  </div>
 </div>
