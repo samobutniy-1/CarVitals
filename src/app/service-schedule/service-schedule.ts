@@ -1,10 +1,11 @@
 import { Component, signal, computed } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { MaintenanceItem } from '../models/maintenance-item.model';
+import { LucideSearch, LucideInfo } from '@lucide/angular';
 
 @Component({
   selector: 'app-service-schedule',
-  imports: [FormsModule],
+  imports: [FormsModule, LucideSearch, LucideInfo],
   templateUrl: './service-schedule.html',
   styleUrl: './service-schedule.css',
 })

@@ -1,31 +1,91 @@
-<h2>Service schedule</h2>
-<p>Check when it's time to replace the part in question</p>
-<input type="text" [(ngModel)]="searchQuery" placeholder="Search for the part.." />
-<label for="fuelType">Fuel type</label>
-<select id="fuelType" [(ngModel)]="selectedFuel">
-  <option value="petrol">Petrol</option>
-  <option value="diesel">Diesel</option>
-  <option value="lpg">LPG</option>
-</select>
-<p>
-  Values shown are general industry averages and may not reflect your specific vehicle. Always check
-  your vehicle's manufacturer service manual for exact intervals.
-</p>
-<table>
-  <thead>
-    <tr>
-      <th>Part name</th>
-      <th>Recommended replacement interval (km)</th>
-      <th>Recommended replacement interval (months)</th>
-    </tr>
-  </thead>
-  <tbody>
-    @for (item of filteredItems(); track item.id) {
-      <tr>
-        <td>{{ item.name }}</td>
-        <td>{{ item.intervalKm }}</td>
-        <td>{{ item.intervalMonth }}</td>
-      </tr>
-    }
-  </tbody>
-</table>
+<section class="flex flex-col justify-center px-4">
+  <h2 class="font-display font-medium text-[42px] mb-1 text-navy">Service schedule</h2>
+  <p class="font-body font-light text-lg text-text-muted mb-4 max-w-[60%]">
+    Check when it's time to replace the part in question
+  </p>
+
+  <!-- Search + fuel filter -->
+  <div class="flex gap-2.5 mb-8">
+    <div class="relative max-w-120 flex-1">
+      <svg
+        lucideSearch
+        [size]="18"
+        aria-hidden="true"
+        class="absolute left-3.5 top-1/2 -translate-y-1/2 text-text-muted"
+      ></svg>
+      <input
+        type="text"
+        [(ngModel)]="searchQuery"
+        placeholder="Search for the part.."
+        class="w-full pl-10 pr-3.5 py-3 rounded-2xl shadow-sm border border-silver-border bg-white text-[15px] text-navy-dark outline-none focus:border-accent transition duration-300"
+      />
+    </div>
+
+    <select
+      id="fuelType"
+      [(ngModel)]="selectedFuel"
+      class="px-5 py-3 rounded-2xl shadow-sm border border-silver-border bg-white text-[15px] text-text-muted outline-none cursor-pointer focus:border-accent transition duration-300"
+    >
+      <option value="petrol">Petrol</option>
+      <option value="diesel">Diesel</option>
+      <option value="lpg">LPG</option>
+    </select>
+  </div>
+
+  <!-- Disclaimer -->
+  <div class="flex gap-2 items-start p-3.5 bg-silver-border shadow-md rounded-2xl mb-8">
+    <svg lucideInfo [size]="18" aria-hidden="true" class="text-navy shrink-0 mt-0.5"></svg>
+    <p class="text-[16px] text-navy leading-relaxed m-0">
+      Values shown are general industry averages and may not reflect your specific vehicle. Always
+      check your vehicle's manufacturer service manual for exact intervals.
+    </p>
+  </div>
+
+  <!-- Table card -->
+  <div
+    class="flex flex-col w-full shadow-sm bg-white border border-silver-border rounded-2xl overflow-hidden"
+  >
+    <table class="w-full border-collapse">
+      <thead>
+        <tr>
+          <th class="text-left pt-4 pb-3 px-5 font-medium text-navy border-b border-silver-border">
+            Part name
+          </th>
+          <th class="text-left pt-4 pb-3 px-5 font-medium text-navy border-b border-silver-border">
+            Interval (km)
+          </th>
+          <th class="text-left pt-4 pb-3 px-5 font-medium text-navy border-b border-silver-border">
+            Interval (months)
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (item of filteredItems(); track item.id; let last = $last) {
+          <tr>
+            <td
+              class="py-4 px-5 font-medium text-navy-dark"
+              [class.border-b]="!last"
+              [class.border-silver-border]="!last"
+            >
+              {{ item.name }}
+            </td>
+            <td
+              class="py-4 px-5 text-text-muted"
+              [class.border-b]="!last"
+              [class.border-silver-border]="!last"
+            >
+              {{ item.intervalKm }}
+            </td>
+            <td
+              class="py-4 px-5 text-text-muted"
+              [class.border-b]="!last"
+              [class.border-silver-border]="!last"
+            >
+              {{ item.intervalMonth }}
+            </td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+</section>
