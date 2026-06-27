@@ -1,15 +1,17 @@
 <section class="flex flex-col justify-center px-4">
-  <h2 class="font-display font-medium text-[42px] mb-1 text-navy">Repair tutorials</h2>
+  <h2 class="font-display font-medium text-3xl sm:text-[42px] mb-1 text-navy">Repair tutorials</h2>
 
   <!-- Vehicle systems -->
-  <div class="mb-8">
-    <p class="font-body font-light text-lg text-text-muted mb-4">Vehicle systems</p>
-    <ul class="grid grid-cols-4 gap-2.5">
+  <div class="mb-6 sm:mb-8">
+    <p class="font-body font-light text-base sm:text-lg text-text-muted mb-3 sm:mb-4">
+      Vehicle systems
+    </p>
+    <ul class="grid grid-cols-2 sm:grid-cols-4 gap-2.5">
       <li>
         <button
           [attr.aria-pressed]="selectedSystemId() === 'engine'"
           (click)="selectSystem('engine')"
-          class="flex flex-col justify-center items-center w-full shadow-sm bg-white border border-silver-border rounded-2xl p-4 hover:border-accent transition duration-300 cursor-pointer"
+          class="flex flex-col justify-center items-center w-full shadow-sm bg-white border border-silver-border rounded-2xl p-3 sm:p-4 hover:border-accent transition duration-300 cursor-pointer"
           [class.bg-navy-dark]="selectedSystemId() === 'engine'"
           [class.border-accent]="selectedSystemId() === 'engine'"
           [class.bg-white]="selectedSystemId() !== 'engine'"
@@ -17,14 +19,13 @@
         >
           <svg
             lucideCog
-            [size]="32"
             aria-hidden="true"
-            class="p-1 rounded w-fit"
+            class="p-1 rounded w-fit w-6 h-6 sm:w-8 sm:h-8"
             [class.text-accent]="selectedSystemId() === 'engine'"
             [class.text-text-muted]="selectedSystemId() !== 'engine'"
           ></svg>
           <span
-            class="font-body font-medium text-xl"
+            class="font-body font-medium text-base sm:text-xl"
             [class.text-accent]="selectedSystemId() === 'engine'"
             [class.text-text-muted]="selectedSystemId() !== 'engine'"
             >Engine</span
@@ -35,7 +36,7 @@
         <button
           [attr.aria-pressed]="selectedSystemId() === 'suspension'"
           (click)="selectSystem('suspension')"
-          class="flex flex-col justify-center items-center w-full shadow-sm bg-white border border-silver-border rounded-2xl p-4 hover:border-accent transition duration-300 cursor-pointer"
+          class="flex flex-col justify-center items-center w-full shadow-sm bg-white border border-silver-border rounded-2xl p-3 sm:p-4 hover:border-accent transition duration-300 cursor-pointer"
           [class.bg-navy-dark]="selectedSystemId() === 'suspension'"
           [class.border-accent]="selectedSystemId() === 'suspension'"
           [class.bg-white]="selectedSystemId() !== 'suspension'"
@@ -43,14 +44,13 @@
         >
           <svg
             lucideMoveVertical
-            [size]="32"
             aria-hidden="true"
-            class="p-1 rounded w-fit"
+            class="p-1 rounded w-fit w-6 h-6 sm:w-8 sm:h-8"
             [class.text-accent]="selectedSystemId() === 'suspension'"
             [class.text-text-muted]="selectedSystemId() !== 'suspension'"
           ></svg>
           <span
-            class="font-body font-medium text-xl"
+            class="font-body font-medium text-base sm:text-xl"
             [class.text-accent]="selectedSystemId() === 'suspension'"
             [class.text-text-muted]="selectedSystemId() !== 'suspension'"
             >Suspension</span
@@ -61,7 +61,7 @@
         <button
           [attr.aria-pressed]="selectedSystemId() === 'brakes'"
           (click)="selectSystem('brakes')"
-          class="flex flex-col justify-center items-center w-full shadow-sm bg-white border border-silver-border rounded-2xl p-4 hover:border-accent transition duration-300 cursor-pointer"
+          class="flex flex-col justify-center items-center w-full shadow-sm bg-white border border-silver-border rounded-2xl p-3 sm:p-4 hover:border-accent transition duration-300 cursor-pointer"
           [class.bg-navy-dark]="selectedSystemId() === 'brakes'"
           [class.border-accent]="selectedSystemId() === 'brakes'"
           [class.bg-white]="selectedSystemId() !== 'brakes'"
@@ -69,14 +69,13 @@
         >
           <svg
             lucideCircleDot
-            [size]="32"
             aria-hidden="true"
-            class="p-1 rounded w-fit"
+            class="p-1 rounded w-fit w-6 h-6 sm:w-8 sm:h-8"
             [class.text-accent]="selectedSystemId() === 'brakes'"
             [class.text-text-muted]="selectedSystemId() !== 'brakes'"
           ></svg>
           <span
-            class="font-body font-medium text-xl"
+            class="font-body font-medium text-base sm:text-xl"
             [class.text-accent]="selectedSystemId() === 'brakes'"
             [class.text-text-muted]="selectedSystemId() !== 'brakes'"
             >Brakes</span
@@ -87,7 +86,7 @@
         <button
           [attr.aria-pressed]="selectedSystemId() === 'electrical'"
           (click)="selectSystem('electrical')"
-          class="flex flex-col justify-center items-center w-full shadow-sm bg-white border border-silver-border rounded-2xl p-4 hover:border-accent transition duration-300 cursor-pointer"
+          class="flex flex-col justify-center items-center w-full shadow-sm bg-white border border-silver-border rounded-2xl p-3 sm:p-4 hover:border-accent transition duration-300 cursor-pointer"
           [class.bg-navy-dark]="selectedSystemId() === 'electrical'"
           [class.border-accent]="selectedSystemId() === 'electrical'"
           [class.bg-white]="selectedSystemId() !== 'electrical'"
@@ -95,14 +94,13 @@
         >
           <svg
             lucideZap
-            [size]="32"
             aria-hidden="true"
-            class="p-1 rounded w-fit"
+            class="p-1 rounded w-fit w-6 h-6 sm:w-8 sm:h-8"
             [class.text-accent]="selectedSystemId() === 'electrical'"
             [class.text-text-muted]="selectedSystemId() !== 'electrical'"
           ></svg>
           <span
-            class="font-body font-medium text-xl"
+            class="font-body font-medium text-base sm:text-xl"
             [class.text-accent]="selectedSystemId() === 'electrical'"
             [class.text-text-muted]="selectedSystemId() !== 'electrical'"
             >Electrical</span
@@ -113,8 +111,8 @@
   </div>
 
   <!-- Component select -->
-  <div class="mb-8">
-    <p class="font-body font-light text-lg text-text-muted mb-4">
+  <div class="mb-6 sm:mb-8">
+    <p class="font-body font-light text-base sm:text-lg text-text-muted mb-3 sm:mb-4">
       {{ selectedSystem()?.name }} - select a component:
     </p>
     <ul class="flex flex-wrap gap-2.5">
@@ -123,7 +121,7 @@
           <button
             [attr.aria-pressed]="selectedTutorialId() === tutorial.id"
             (click)="selectTutorial(tutorial.id)"
-            class="px-4 py-2.5 rounded-xl shadow-sm border border-silver-border bg-white hover:border-accent transition duration-300 cursor-pointer text-lg"
+            class="px-3.5 sm:px-4 py-2 sm:py-2.5 rounded-xl shadow-sm border border-silver-border bg-white hover:border-accent transition duration-300 cursor-pointer text-sm sm:text-lg"
             [class.bg-navy-dark]="selectedTutorialId() === tutorial.id"
             [class.border-accent]="selectedTutorialId() === tutorial.id"
             [class.text-accent]="selectedTutorialId() === tutorial.id"
@@ -142,32 +140,34 @@
   <!-- Tutorial detail -->
   @if (selectedTutorial(); as tutorial) {
     <div
-      class="flex flex-col w-full shadow-sm bg-white border border-silver-border rounded-2xl p-4"
+      class="flex flex-col w-full shadow-sm bg-white border border-silver-border rounded-2xl p-3 sm:p-4"
     >
-      <p class="font-display font-medium text-2xl text-navy-dark mb-4">
+      <p class="font-display font-medium text-xl sm:text-2xl text-navy-dark mb-3 sm:mb-4">
         Replacing {{ tutorial.name }}
       </p>
 
-      <p class="font-body font-medium text-navy text-xl mb-3">Tools needed</p>
-      <ul class="flex flex-col gap-1 mb-6">
+      <p class="font-body font-medium text-navy text-base sm:text-xl mb-2.5 sm:mb-3">
+        Tools needed
+      </p>
+      <ul class="flex flex-col gap-1 mb-5 sm:mb-6">
         @for (tool of tutorial.tools; track tool) {
-          <li class="flex items-center gap-2.5 text-lg text-navy-dark">
+          <li class="flex items-center gap-2.5 text-sm sm:text-lg text-navy-dark">
             <span class="w-1.5 h-1.5 rounded-full bg-accent shrink-0"></span>
             {{ tool }}
           </li>
         }
       </ul>
 
-      <p class="font-body font-medium text-navy text-xl mb-3">Steps</p>
-      <ul class="flex flex-col gap-4 mb-6">
+      <p class="font-body font-medium text-navy text-base sm:text-xl mb-2.5 sm:mb-3">Steps</p>
+      <ul class="flex flex-col gap-3 sm:gap-4 mb-5 sm:mb-6">
         @for (step of tutorial.steps; track step.order) {
-          <li class="flex gap-3.5">
+          <li class="flex gap-3 sm:gap-3.5">
             <span
-              class="shrink-0 w-7 h-7 rounded-full bg-navy-dark text-silver text-sm font-medium flex items-center justify-center"
+              class="shrink-0 w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-navy-dark text-silver text-xs sm:text-sm font-medium flex items-center justify-center"
               >{{ step.order }}</span
             >
             <div class="flex-1">
-              <p class="m-0 text-lg text-navy-dark leading-relaxed">{{ step.text }}</p>
+              <p class="m-0 text-sm sm:text-lg text-navy-dark leading-relaxed">{{ step.text }}</p>
               @if (step.image) {
                 <img
                   [src]="step.image"
@@ -183,9 +183,11 @@
       <ul class="flex flex-col gap-1.5">
         @for (link of tutorial.links; track link.title) {
           <li>
-            <a [href]="link.link" class="text-accent text-lg no-underline hover:underline">{{
-              link.title
-            }}</a>
+            <a
+              [href]="link.link"
+              class="text-accent text-sm sm:text-lg no-underline hover:underline"
+              >{{ link.title }}</a
+            >
           </li>
         }
       </ul>
