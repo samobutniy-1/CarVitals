@@ -3,63 +3,78 @@
     <svg lucideSparkles [size]="14" class="text-accent"></svg>
     <span class="font-mono font-normal text-sm">AI-powered diagnostics</span>
   </div>
-  <h1 class="font-display font-medium text-[48px] mb-2 text-navy">Know your car`s vitals</h1>
-  <p class="font-body font-light text-lg text-text-muted mb-4 max-w-[60%]">
+
+  <h1 class="font-display font-medium text-3xl sm:text-[48px] mb-2 text-navy">
+    Know your car`s vitals
+  </h1>
+
+  <p
+    class="font-body font-light text-base sm:text-lg text-text-muted mb-4 max-w-full sm:max-w-[60%]"
+  >
     Track maintenance, spot what's wrong, and get answers from an AI mechanic who knows your car.
   </p>
-  <ul class="grid grid-cols-2 gap-4">
+
+  <ul class="grid grid-cols-2 gap-3 sm:gap-4">
     <li
-      class="shadow-sm bg-white border border-silver-border rounded-2xl p-4 hover:border-accent transition duration-300"
+      class="shadow-sm bg-white border border-silver-border rounded-2xl p-3 sm:p-4 hover:border-accent transition duration-300"
     >
       <a href="/symptom-checker">
         <div class="flex flex-col justify-center gap-1 mb-1">
-          <svg lucideStethoscope [size]="24" class="text-silver bg-navy p-1 rounded"></svg>
-          <p class="font-display font-medium text-xl text-navy">Symptom checker</p>
+          <svg
+            lucideStethoscope
+            [size]="20"
+            class="text-silver bg-navy p-1 rounded sm:size-6"
+          ></svg>
+          <p class="font-display font-medium text-base sm:text-xl text-navy">Symptom checker</p>
         </div>
-
-        <p class="font-body font-light text-text-muted">
+        <p class="font-body font-light text-sm sm:text-base text-text-muted">
           Squealing brakes? Suspension knock? Find the likely cause.
         </p>
       </a>
     </li>
     <li
-      class="shadow-sm bg-white border border-silver-border rounded-2xl p-4 hover:border-accent transition duration-300"
+      class="shadow-sm bg-white border border-silver-border rounded-2xl p-3 sm:p-4 hover:border-accent transition duration-300"
     >
       <a href="/service-schedule">
         <div class="flex flex-col justify-center gap-1 mb-1">
-          <svg lucideCalendarClock [size]="24" class="text-silver bg-navy p-1 rounded"></svg>
-          <p class="font-display font-medium text-xl text-navy">Service schedule</p>
+          <svg
+            lucideCalendarClock
+            [size]="20"
+            class="text-silver bg-navy p-1 rounded sm:size-6"
+          ></svg>
+          <p class="font-display font-medium text-base sm:text-xl text-navy">Service schedule</p>
         </div>
-
-        <p class="font-body font-light text-text-muted">
+        <p class="font-body font-light text-sm sm:text-base text-text-muted">
           Oil, filters, fluids — know what's due and when.
         </p>
       </a>
     </li>
     <li
-      class="shadow-sm bg-white border border-silver-border rounded-2xl p-4 hover:border-accent transition duration-300"
+      class="shadow-sm bg-white border border-silver-border rounded-2xl p-3 sm:p-4 hover:border-accent transition duration-300"
     >
       <a href="/chat">
         <div class="flex flex-col justify-center gap-1 mb-1">
-          <svg lucideMessageCircle [size]="24" class="text-silver bg-navy p-1 rounded"></svg>
-          <p class="font-display font-medium text-xl text-navy">AI mechanic chat</p>
+          <svg
+            lucideMessageCircle
+            [size]="20"
+            class="text-silver bg-navy p-1 rounded sm:size-6"
+          ></svg>
+          <p class="font-display font-medium text-base sm:text-xl text-navy">AI mechanic chat</p>
         </div>
-
-        <p class="font-body font-light text-text-muted">
+        <p class="font-body font-light text-sm sm:text-base text-text-muted">
           Ask anything, get answers tuned to your exact car.
         </p>
       </a>
     </li>
     <li
-      class="shadow-sm bg-white border border-silver-border rounded-2xl p-4 hover:border-accent transition duration-300"
+      class="shadow-sm bg-white border border-silver-border rounded-2xl p-3 sm:p-4 hover:border-accent transition duration-300"
     >
       <a href="/tutorials">
         <div class="flex flex-col justify-center gap-1 mb-1">
-          <svg lucideWrench [size]="24" class="text-silver bg-navy p-1 rounded"></svg>
-          <p class="font-display font-medium text-xl text-navy">Tutorials</p>
+          <svg lucideWrench [size]="20" class="text-silver bg-navy p-1 rounded sm:size-6"></svg>
+          <p class="font-display font-medium text-base sm:text-xl text-navy">Tutorials</p>
         </div>
-
-        <p class="font-body font-light text-text-muted">
+        <p class="font-body font-light text-sm sm:text-base text-text-muted">
           Step-by-step guides with photos and videos for common fixes.
         </p>
       </a>
