@@ -1,10 +1,11 @@
 import { Component, signal, computed } from '@angular/core';
+import { NgClass } from '@angular/common';
 import { VehicleSystem, Tutorial, TutorialLink, TutorialStep } from '../models/tutorials.model';
 import { LucideCog, LucideMoveVertical, LucideCircleDot, LucideZap } from '@lucide/angular';
 
 @Component({
   selector: 'app-tutorials',
-  imports: [LucideCog, LucideMoveVertical, LucideCircleDot, LucideZap],
+  imports: [LucideCog, LucideMoveVertical, LucideCircleDot, LucideZap, NgClass],
   templateUrl: './tutorials.html',
   styleUrl: './tutorials.css',
 })

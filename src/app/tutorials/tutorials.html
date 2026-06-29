@@ -1,9 +1,15 @@
 <section class="flex flex-col justify-center px-4">
-  <h2 class="font-display font-medium text-3xl sm:text-[42px] mb-1 text-navy">Repair tutorials</h2>
+  <h2
+    class="font-display font-medium text-3xl sm:text-[42px] mb-1 text-navy dark:text-dark-text transition-colors duration-300"
+  >
+    Repair tutorials
+  </h2>
 
   <!-- Vehicle systems -->
   <div class="mb-6 sm:mb-8">
-    <p class="font-body font-light text-base sm:text-lg text-text-muted mb-3 sm:mb-4">
+    <p
+      class="font-body font-light text-base sm:text-lg text-text-muted dark:text-dark-text/70 mb-3 sm:mb-4 transition-colors duration-300"
+    >
       Vehicle systems
     </p>
     <ul class="grid grid-cols-2 sm:grid-cols-4 gap-2.5">
@@ -11,23 +17,28 @@
         <button
           [attr.aria-pressed]="selectedSystemId() === 'engine'"
           (click)="selectSystem('engine')"
-          class="flex flex-col justify-center items-center w-full shadow-sm bg-white border border-silver-border rounded-2xl p-3 sm:p-4 hover:border-accent transition duration-300 cursor-pointer"
-          [class.bg-navy-dark]="selectedSystemId() === 'engine'"
-          [class.border-accent]="selectedSystemId() === 'engine'"
-          [class.bg-white]="selectedSystemId() !== 'engine'"
-          [class.border-silver-border]="selectedSystemId() !== 'engine'"
+          class="flex flex-col justify-center items-center w-full shadow-sm border rounded-2xl p-3 sm:p-4 hover:border-accent transition-colors duration-300 cursor-pointer"
+          [ngClass]="{
+            'bg-navy-dark border-accent': selectedSystemId() === 'engine',
+            'bg-white dark:bg-dark-surface border-silver-border dark:border-dark-border':
+              selectedSystemId() !== 'engine',
+          }"
         >
           <svg
             lucideCog
             aria-hidden="true"
-            class="p-1 rounded w-fit w-6 h-6 sm:w-8 sm:h-8"
-            [class.text-accent]="selectedSystemId() === 'engine'"
-            [class.text-text-muted]="selectedSystemId() !== 'engine'"
+            class="p-1 rounded w-fit w-6 h-6 sm:w-8 sm:h-8 transition-colors duration-300"
+            [ngClass]="{
+              'text-accent': selectedSystemId() === 'engine',
+              'text-text-muted dark:text-dark-text/70': selectedSystemId() !== 'engine',
+            }"
           ></svg>
           <span
-            class="font-body font-medium text-base sm:text-xl"
-            [class.text-accent]="selectedSystemId() === 'engine'"
-            [class.text-text-muted]="selectedSystemId() !== 'engine'"
+            class="font-body font-medium text-base sm:text-xl transition-colors duration-300"
+            [ngClass]="{
+              'text-accent': selectedSystemId() === 'engine',
+              'text-text-muted dark:text-dark-text/70': selectedSystemId() !== 'engine',
+            }"
             >Engine</span
           >
         </button>
@@ -36,23 +47,28 @@
         <button
           [attr.aria-pressed]="selectedSystemId() === 'suspension'"
           (click)="selectSystem('suspension')"
-          class="flex flex-col justify-center items-center w-full shadow-sm bg-white border border-silver-border rounded-2xl p-3 sm:p-4 hover:border-accent transition duration-300 cursor-pointer"
-          [class.bg-navy-dark]="selectedSystemId() === 'suspension'"
-          [class.border-accent]="selectedSystemId() === 'suspension'"
-          [class.bg-white]="selectedSystemId() !== 'suspension'"
-          [class.border-silver-border]="selectedSystemId() !== 'suspension'"
+          class="flex flex-col justify-center items-center w-full shadow-sm border rounded-2xl p-3 sm:p-4 hover:border-accent transition-colors duration-300 cursor-pointer"
+          [ngClass]="{
+            'bg-navy-dark border-accent': selectedSystemId() === 'suspension',
+            'bg-white dark:bg-dark-surface border-silver-border dark:border-dark-border':
+              selectedSystemId() !== 'suspension',
+          }"
         >
           <svg
             lucideMoveVertical
             aria-hidden="true"
-            class="p-1 rounded w-fit w-6 h-6 sm:w-8 sm:h-8"
-            [class.text-accent]="selectedSystemId() === 'suspension'"
-            [class.text-text-muted]="selectedSystemId() !== 'suspension'"
+            class="p-1 rounded w-fit w-6 h-6 sm:w-8 sm:h-8 transition-colors duration-300"
+            [ngClass]="{
+              'text-accent': selectedSystemId() === 'suspension',
+              'text-text-muted dark:text-dark-text/70': selectedSystemId() !== 'suspension',
+            }"
           ></svg>
           <span
-            class="font-body font-medium text-base sm:text-xl"
-            [class.text-accent]="selectedSystemId() === 'suspension'"
-            [class.text-text-muted]="selectedSystemId() !== 'suspension'"
+            class="font-body font-medium text-base sm:text-xl transition-colors duration-300"
+            [ngClass]="{
+              'text-accent': selectedSystemId() === 'suspension',
+              'text-text-muted dark:text-dark-text/70': selectedSystemId() !== 'suspension',
+            }"
             >Suspension</span
           >
         </button>
@@ -61,23 +77,28 @@
         <button
           [attr.aria-pressed]="selectedSystemId() === 'brakes'"
           (click)="selectSystem('brakes')"
-          class="flex flex-col justify-center items-center w-full shadow-sm bg-white border border-silver-border rounded-2xl p-3 sm:p-4 hover:border-accent transition duration-300 cursor-pointer"
-          [class.bg-navy-dark]="selectedSystemId() === 'brakes'"
-          [class.border-accent]="selectedSystemId() === 'brakes'"
-          [class.bg-white]="selectedSystemId() !== 'brakes'"
-          [class.border-silver-border]="selectedSystemId() !== 'brakes'"
+          class="flex flex-col justify-center items-center w-full shadow-sm border rounded-2xl p-3 sm:p-4 hover:border-accent transition-colors duration-300 cursor-pointer"
+          [ngClass]="{
+            'bg-navy-dark border-accent': selectedSystemId() === 'brakes',
+            'bg-white dark:bg-dark-surface border-silver-border dark:border-dark-border':
+              selectedSystemId() !== 'brakes',
+          }"
         >
           <svg
             lucideCircleDot
             aria-hidden="true"
-            class="p-1 rounded w-fit w-6 h-6 sm:w-8 sm:h-8"
-            [class.text-accent]="selectedSystemId() === 'brakes'"
-            [class.text-text-muted]="selectedSystemId() !== 'brakes'"
+            class="p-1 rounded w-fit w-6 h-6 sm:w-8 sm:h-8 transition-colors duration-300"
+            [ngClass]="{
+              'text-accent': selectedSystemId() === 'brakes',
+              'text-text-muted dark:text-dark-text/70': selectedSystemId() !== 'brakes',
+            }"
           ></svg>
           <span
-            class="font-body font-medium text-base sm:text-xl"
-            [class.text-accent]="selectedSystemId() === 'brakes'"
-            [class.text-text-muted]="selectedSystemId() !== 'brakes'"
+            class="font-body font-medium text-base sm:text-xl transition-colors duration-300"
+            [ngClass]="{
+              'text-accent': selectedSystemId() === 'brakes',
+              'text-text-muted dark:text-dark-text/70': selectedSystemId() !== 'brakes',
+            }"
             >Brakes</span
           >
         </button>
@@ -86,23 +107,28 @@
         <button
           [attr.aria-pressed]="selectedSystemId() === 'electrical'"
           (click)="selectSystem('electrical')"
-          class="flex flex-col justify-center items-center w-full shadow-sm bg-white border border-silver-border rounded-2xl p-3 sm:p-4 hover:border-accent transition duration-300 cursor-pointer"
-          [class.bg-navy-dark]="selectedSystemId() === 'electrical'"
-          [class.border-accent]="selectedSystemId() === 'electrical'"
-          [class.bg-white]="selectedSystemId() !== 'electrical'"
-          [class.border-silver-border]="selectedSystemId() !== 'electrical'"
+          class="flex flex-col justify-center items-center w-full shadow-sm border rounded-2xl p-3 sm:p-4 hover:border-accent transition-colors duration-300 cursor-pointer"
+          [ngClass]="{
+            'bg-navy-dark border-accent': selectedSystemId() === 'electrical',
+            'bg-white dark:bg-dark-surface border-silver-border dark:border-dark-border':
+              selectedSystemId() !== 'electrical',
+          }"
         >
           <svg
             lucideZap
             aria-hidden="true"
-            class="p-1 rounded w-fit w-6 h-6 sm:w-8 sm:h-8"
-            [class.text-accent]="selectedSystemId() === 'electrical'"
-            [class.text-text-muted]="selectedSystemId() !== 'electrical'"
+            class="p-1 rounded w-fit w-6 h-6 sm:w-8 sm:h-8 transition-colors duration-300"
+            [ngClass]="{
+              'text-accent': selectedSystemId() === 'electrical',
+              'text-text-muted dark:text-dark-text/70': selectedSystemId() !== 'electrical',
+            }"
           ></svg>
           <span
-            class="font-body font-medium text-base sm:text-xl"
-            [class.text-accent]="selectedSystemId() === 'electrical'"
-            [class.text-text-muted]="selectedSystemId() !== 'electrical'"
+            class="font-body font-medium text-base sm:text-xl transition-colors duration-300"
+            [ngClass]="{
+              'text-accent': selectedSystemId() === 'electrical',
+              'text-text-muted dark:text-dark-text/70': selectedSystemId() !== 'electrical',
+            }"
             >Electrical</span
           >
         </button>
@@ -112,7 +138,9 @@
 
   <!-- Component select -->
   <div class="mb-6 sm:mb-8">
-    <p class="font-body font-light text-base sm:text-lg text-text-muted mb-3 sm:mb-4">
+    <p
+      class="font-body font-light text-base sm:text-lg text-text-muted dark:text-dark-text/70 mb-3 sm:mb-4 transition-colors duration-300"
+    >
       {{ selectedSystem()?.name }} - select a component:
     </p>
     <ul class="flex flex-wrap gap-2.5">
@@ -121,14 +149,13 @@
           <button
             [attr.aria-pressed]="selectedTutorialId() === tutorial.id"
             (click)="selectTutorial(tutorial.id)"
-            class="px-3.5 sm:px-4 py-2 sm:py-2.5 rounded-xl shadow-sm border border-silver-border bg-white hover:border-accent transition duration-300 cursor-pointer text-sm sm:text-lg"
-            [class.bg-navy-dark]="selectedTutorialId() === tutorial.id"
-            [class.border-accent]="selectedTutorialId() === tutorial.id"
-            [class.text-accent]="selectedTutorialId() === tutorial.id"
-            [class.font-medium]="selectedTutorialId() === tutorial.id"
-            [class.bg-white]="selectedTutorialId() !== tutorial.id"
-            [class.border-silver-border]="selectedTutorialId() !== tutorial.id"
-            [class.text-text-muted]="selectedTutorialId() !== tutorial.id"
+            class="px-3.5 sm:px-4 py-2 sm:py-2.5 rounded-xl shadow-sm border hover:border-accent transition-colors duration-300 cursor-pointer text-sm sm:text-lg"
+            [ngClass]="{
+              'bg-navy-dark border-accent text-accent font-medium':
+                selectedTutorialId() === tutorial.id,
+              'bg-white dark:bg-dark-surface border-silver-border dark:border-dark-border text-text-muted dark:text-dark-text/70':
+                selectedTutorialId() !== tutorial.id,
+            }"
           >
             {{ tutorial.name }}
           </button>
@@ -140,25 +167,35 @@
   <!-- Tutorial detail -->
   @if (selectedTutorial(); as tutorial) {
     <div
-      class="flex flex-col w-full shadow-sm bg-white border border-silver-border rounded-2xl p-3 sm:p-4"
+      class="flex flex-col w-full shadow-sm bg-white dark:bg-dark-surface border border-silver-border dark:border-dark-border rounded-2xl p-3 sm:p-4 transition-colors duration-300"
     >
-      <p class="font-display font-medium text-xl sm:text-2xl text-navy-dark mb-3 sm:mb-4">
+      <p
+        class="font-display font-medium text-xl sm:text-2xl text-navy-dark dark:text-dark-text mb-3 sm:mb-4 transition-colors duration-300"
+      >
         Replacing {{ tutorial.name }}
       </p>
 
-      <p class="font-body font-medium text-navy text-base sm:text-xl mb-2.5 sm:mb-3">
+      <p
+        class="font-body font-medium text-navy dark:text-dark-text text-base sm:text-xl mb-2.5 sm:mb-3 transition-colors duration-300"
+      >
         Tools needed
       </p>
       <ul class="flex flex-col gap-1 mb-5 sm:mb-6">
         @for (tool of tutorial.tools; track tool) {
-          <li class="flex items-center gap-2.5 text-sm sm:text-lg text-navy-dark">
+          <li
+            class="flex items-center gap-2.5 text-sm sm:text-lg text-navy-dark dark:text-dark-text transition-colors duration-300"
+          >
             <span class="w-1.5 h-1.5 rounded-full bg-accent shrink-0"></span>
             {{ tool }}
           </li>
         }
       </ul>
 
-      <p class="font-body font-medium text-navy text-base sm:text-xl mb-2.5 sm:mb-3">Steps</p>
+      <p
+        class="font-body font-medium text-navy dark:text-dark-text text-base sm:text-xl mb-2.5 sm:mb-3 transition-colors duration-300"
+      >
+        Steps
+      </p>
       <ul class="flex flex-col gap-3 sm:gap-4 mb-5 sm:mb-6">
         @for (step of tutorial.steps; track step.order) {
           <li class="flex gap-3 sm:gap-3.5">
@@ -167,12 +204,16 @@
               >{{ step.order }}</span
             >
             <div class="flex-1">
-              <p class="m-0 text-sm sm:text-lg text-navy-dark leading-relaxed">{{ step.text }}</p>
+              <p
+                class="m-0 text-sm sm:text-lg text-navy-dark dark:text-dark-text leading-relaxed transition-colors duration-300"
+              >
+                {{ step.text }}
+              </p>
               @if (step.image) {
                 <img
                   [src]="step.image"
                   [alt]="step.text"
-                  class="mt-2.5 rounded-xl border border-silver-border max-w-full"
+                  class="mt-2.5 rounded-xl border border-silver-border dark:border-dark-border max-w-full transition-colors duration-300"
                 />
               }
             </div>
