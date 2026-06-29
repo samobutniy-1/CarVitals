@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { TranslationService } from '../services/translation.service';
 import {
   LucideSparkles,
   LucideStethoscope,
@@ -20,4 +21,6 @@ import {
   templateUrl: './hero-section.html',
   styleUrl: './hero-section.css',
 })
-export class HeroSection {}
+export class HeroSection {
+  readonly translation = inject(TranslationService);
+}

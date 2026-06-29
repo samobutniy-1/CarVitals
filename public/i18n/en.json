@@ -1,7 +1,5 @@
 {
-  "header": {
-    "appName": "CarVitals"
-  },
+  "header": {},
   "hero": {
     "badge": "AI-powered diagnostics",
     "title": "Know your car's vitals",
