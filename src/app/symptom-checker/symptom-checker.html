@@ -1,7 +1,11 @@
 <section class="flex flex-col justify-center px-4">
-  <h2 class="font-display font-medium text-3xl sm:text-[42px] mb-1 text-navy">Symptom checker</h2>
+  <h2
+    class="font-display font-medium text-3xl sm:text-[42px] mb-1 text-navy dark:text-dark-text transition-colors duration-300"
+  >
+    Symptom checker
+  </h2>
   <p
-    class="font-body font-light text-base sm:text-lg text-text-muted mb-4 max-w-full sm:max-w-[60%]"
+    class="font-body font-light text-base sm:text-lg text-text-muted dark:text-dark-text/70 mb-4 max-w-full sm:max-w-[60%] transition-colors duration-300"
   >
     Pick the part of your car, then describe what's happening.
   </p>
@@ -13,23 +17,28 @@
         <button
           [attr.aria-pressed]="selectedCategory() === 'brakes'"
           (click)="selectCategory('brakes')"
-          class="flex flex-col justify-center items-center w-full shadow-sm bg-white border border-silver-border rounded-2xl p-3 sm:p-4 hover:border-accent transition duration-300 cursor-pointer"
-          [class.bg-navy-dark]="selectedCategory() === 'brakes'"
-          [class.border-accent]="selectedCategory() === 'brakes'"
-          [class.bg-white]="selectedCategory() !== 'brakes'"
-          [class.border-silver-border]="selectedCategory() !== 'brakes'"
+          class="flex flex-col justify-center items-center w-full shadow-sm border rounded-2xl p-3 sm:p-4 hover:border-accent transition-colors duration-300 cursor-pointer"
+          [ngClass]="{
+            'bg-navy-dark border-accent': selectedCategory() === 'brakes',
+            'bg-white dark:bg-dark-surface border-silver-border dark:border-dark-border':
+              selectedCategory() !== 'brakes',
+          }"
         >
           <svg
             lucideCircleDot
             aria-hidden="true"
-            class="p-1 rounded w-fit w-6 h-6 sm:w-8 sm:h-8"
-            [class.text-accent]="selectedCategory() === 'brakes'"
-            [class.text-text-muted]="selectedCategory() !== 'brakes'"
+            class="p-1 rounded w-fit w-6 h-6 sm:w-8 sm:h-8 transition-colors duration-300"
+            [ngClass]="{
+              'text-accent': selectedCategory() === 'brakes',
+              'text-text-muted dark:text-dark-text/70': selectedCategory() !== 'brakes',
+            }"
           ></svg>
           <span
-            class="font-body font-medium text-base sm:text-xl"
-            [class.text-accent]="selectedCategory() === 'brakes'"
-            [class.text-text-muted]="selectedCategory() !== 'brakes'"
+            class="font-body font-medium text-base sm:text-xl transition-colors duration-300"
+            [ngClass]="{
+              'text-accent': selectedCategory() === 'brakes',
+              'text-text-muted dark:text-dark-text/70': selectedCategory() !== 'brakes',
+            }"
             >Brakes</span
           >
         </button>
@@ -38,23 +47,28 @@
         <button
           [attr.aria-pressed]="selectedCategory() === 'suspension'"
           (click)="selectCategory('suspension')"
-          class="flex flex-col justify-center items-center w-full shadow-sm bg-white border border-silver-border rounded-2xl p-3 sm:p-4 hover:border-accent transition duration-300 cursor-pointer"
-          [class.bg-navy-dark]="selectedCategory() === 'suspension'"
-          [class.border-accent]="selectedCategory() === 'suspension'"
-          [class.bg-white]="selectedCategory() !== 'suspension'"
-          [class.border-silver-border]="selectedCategory() !== 'suspension'"
+          class="flex flex-col justify-center items-center w-full shadow-sm border rounded-2xl p-3 sm:p-4 hover:border-accent transition-colors duration-300 cursor-pointer"
+          [ngClass]="{
+            'bg-navy-dark border-accent': selectedCategory() === 'suspension',
+            'bg-white dark:bg-dark-surface border-silver-border dark:border-dark-border':
+              selectedCategory() !== 'suspension',
+          }"
         >
           <svg
             lucideMoveVertical
             aria-hidden="true"
-            class="p-1 rounded w-fit w-6 h-6 sm:w-8 sm:h-8"
-            [class.text-accent]="selectedCategory() === 'suspension'"
-            [class.text-text-muted]="selectedCategory() !== 'suspension'"
+            class="p-1 rounded w-fit w-6 h-6 sm:w-8 sm:h-8 transition-colors duration-300"
+            [ngClass]="{
+              'text-accent': selectedCategory() === 'suspension',
+              'text-text-muted dark:text-dark-text/70': selectedCategory() !== 'suspension',
+            }"
           ></svg>
           <span
-            class="font-body font-medium text-base sm:text-xl"
-            [class.text-accent]="selectedCategory() === 'suspension'"
-            [class.text-text-muted]="selectedCategory() !== 'suspension'"
+            class="font-body font-medium text-base sm:text-xl transition-colors duration-300"
+            [ngClass]="{
+              'text-accent': selectedCategory() === 'suspension',
+              'text-text-muted dark:text-dark-text/70': selectedCategory() !== 'suspension',
+            }"
             >Suspension</span
           >
         </button>
@@ -63,23 +77,28 @@
         <button
           [attr.aria-pressed]="selectedCategory() === 'engine'"
           (click)="selectCategory('engine')"
-          class="flex flex-col justify-center items-center w-full shadow-sm bg-white border border-silver-border rounded-2xl p-3 sm:p-4 hover:border-accent transition duration-300 cursor-pointer"
-          [class.bg-navy-dark]="selectedCategory() === 'engine'"
-          [class.border-accent]="selectedCategory() === 'engine'"
-          [class.bg-white]="selectedCategory() !== 'engine'"
-          [class.border-silver-border]="selectedCategory() !== 'engine'"
+          class="flex flex-col justify-center items-center w-full shadow-sm border rounded-2xl p-3 sm:p-4 hover:border-accent transition-colors duration-300 cursor-pointer"
+          [ngClass]="{
+            'bg-navy-dark border-accent': selectedCategory() === 'engine',
+            'bg-white dark:bg-dark-surface border-silver-border dark:border-dark-border':
+              selectedCategory() !== 'engine',
+          }"
         >
           <svg
             lucideCog
             aria-hidden="true"
-            class="p-1 rounded w-fit w-6 h-6 sm:w-8 sm:h-8"
-            [class.text-accent]="selectedCategory() === 'engine'"
-            [class.text-text-muted]="selectedCategory() !== 'engine'"
+            class="p-1 rounded w-fit w-6 h-6 sm:w-8 sm:h-8 transition-colors duration-300"
+            [ngClass]="{
+              'text-accent': selectedCategory() === 'engine',
+              'text-text-muted dark:text-dark-text/70': selectedCategory() !== 'engine',
+            }"
           ></svg>
           <span
-            class="font-body font-medium text-base sm:text-xl"
-            [class.text-accent]="selectedCategory() === 'engine'"
-            [class.text-text-muted]="selectedCategory() !== 'engine'"
+            class="font-body font-medium text-base sm:text-xl transition-colors duration-300"
+            [ngClass]="{
+              'text-accent': selectedCategory() === 'engine',
+              'text-text-muted dark:text-dark-text/70': selectedCategory() !== 'engine',
+            }"
             >Engine</span
           >
         </button>
@@ -88,23 +107,28 @@
         <button
           [attr.aria-pressed]="selectedCategory() === 'electrical'"
           (click)="selectCategory('electrical')"
-          class="flex flex-col justify-center items-center w-full shadow-sm bg-white border border-silver-border rounded-2xl p-3 sm:p-4 hover:border-accent transition duration-300 cursor-pointer"
-          [class.bg-navy-dark]="selectedCategory() === 'electrical'"
-          [class.border-accent]="selectedCategory() === 'electrical'"
-          [class.bg-white]="selectedCategory() !== 'electrical'"
-          [class.border-silver-border]="selectedCategory() !== 'electrical'"
+          class="flex flex-col justify-center items-center w-full shadow-sm border rounded-2xl p-3 sm:p-4 hover:border-accent transition-colors duration-300 cursor-pointer"
+          [ngClass]="{
+            'bg-navy-dark border-accent': selectedCategory() === 'electrical',
+            'bg-white dark:bg-dark-surface border-silver-border dark:border-dark-border':
+              selectedCategory() !== 'electrical',
+          }"
         >
           <svg
             lucideZap
             aria-hidden="true"
-            class="p-1 rounded w-fit w-6 h-6 sm:w-8 sm:h-8"
-            [class.text-accent]="selectedCategory() === 'electrical'"
-            [class.text-text-muted]="selectedCategory() !== 'electrical'"
+            class="p-1 rounded w-fit w-6 h-6 sm:w-8 sm:h-8 transition-colors duration-300"
+            [ngClass]="{
+              'text-accent': selectedCategory() === 'electrical',
+              'text-text-muted dark:text-dark-text/70': selectedCategory() !== 'electrical',
+            }"
           ></svg>
           <span
-            class="font-body font-medium text-base sm:text-xl"
-            [class.text-accent]="selectedCategory() === 'electrical'"
-            [class.text-text-muted]="selectedCategory() !== 'electrical'"
+            class="font-body font-medium text-base sm:text-xl transition-colors duration-300"
+            [ngClass]="{
+              'text-accent': selectedCategory() === 'electrical',
+              'text-text-muted dark:text-dark-text/70': selectedCategory() !== 'electrical',
+            }"
             >Electrical</span
           >
         </button>
@@ -114,24 +138,25 @@
 
   <!-- Questions section -->
   <div
-    class="flex flex-col w-full shadow-sm bg-white border border-silver-border rounded-2xl p-3 sm:p-4 mb-6 sm:mb-8"
+    class="flex flex-col w-full shadow-sm bg-white dark:bg-dark-surface border border-silver-border dark:border-dark-border rounded-2xl p-3 sm:p-4 mb-6 sm:mb-8 transition-colors duration-300"
   >
     <fieldset>
       <legend class="flex gap-1 items-center mb-3 sm:mb-4">
         <svg
           lucideHelpCircle
           aria-hidden="true"
-          class="text-navy p-0.5 w-5 h-5 sm:w-6 sm:h-6"
+          class="text-navy dark:text-dark-text p-0.5 w-5 h-5 sm:w-6 sm:h-6 transition-colors duration-300"
         ></svg>
-        <span class="font-body font-medium text-navy text-base sm:text-xl"
+        <span
+          class="font-body font-medium text-navy dark:text-dark-text text-base sm:text-xl transition-colors duration-300"
           >What does it sound/feel like?</span
         >
       </legend>
 
       @for (option of filteredSymptoms(); track option.value) {
         <label
-          class="flex items-center gap-2.5 py-2 px-1 cursor-pointer rounded-xl mb-1"
-          [class.bg-silver-hover]="selectedSymptom() === option.value"
+          class="flex items-center gap-2.5 py-2 px-1 cursor-pointer rounded-xl mb-1 transition-colors duration-300"
+          [ngClass]="{ 'bg-silver-hover dark:bg-dark-border': selectedSymptom() === option.value }"
           ><input
             type="radio"
             name="symptom"
@@ -140,10 +165,11 @@
             class="accent-accent w-4 h-4"
           />
           <span
-            class="text-sm sm:text-lg"
-            [class.text-navy-dark]="selectedSymptom() === option.value"
-            [class.font-medium]="selectedSymptom() === option.value"
-            [class.text-text-muted]="selectedSymptom() !== option.value"
+            class="text-sm sm:text-lg transition-colors duration-300"
+            [ngClass]="{
+              'text-navy-dark dark:text-dark-text font-medium': selectedSymptom() === option.value,
+              'text-text-muted dark:text-dark-text/70': selectedSymptom() !== option.value,
+            }"
             >{{ option.label }}</span
           ></label
         >
@@ -154,17 +180,22 @@
   <!-- Likely causes -->
   @if (filteredCauses().length > 0) {
     <div class="flex flex-col">
-      <p class="font-display font-light text-text-muted text-base sm:text-xl mb-3 sm:mb-4 pl-1">
+      <p
+        class="font-display font-light text-text-muted dark:text-dark-text/70 text-base sm:text-xl mb-3 sm:mb-4 pl-1 transition-colors duration-300"
+      >
         Likely causes
       </p>
       <ul class="flex flex-col gap-2.5 sm:gap-3">
         @for (cause of filteredCauses(); track cause.symptom) {
           <li
-            class="flex flex-col sm:flex-row sm:justify-between gap-2 shadow-sm bg-white border border-silver-border rounded-xl p-3 sm:p-4"
+            class="flex flex-col sm:flex-row sm:justify-between gap-2 shadow-sm bg-white dark:bg-dark-surface border border-silver-border dark:border-dark-border rounded-xl p-3 sm:p-4 transition-colors duration-300"
             [class.border-l-3]="cause.mostLikely"
             [class.border-l-accent]="cause.mostLikely"
           >
-            <p class="text-sm sm:text-lg text-navy-dark m-0" [class.font-medium]="cause.mostLikely">
+            <p
+              class="text-sm sm:text-lg text-navy-dark dark:text-dark-text m-0 transition-colors duration-300"
+              [class.font-medium]="cause.mostLikely"
+            >
               {{ cause.label }}
             </p>
             @if (cause.mostLikely) {
