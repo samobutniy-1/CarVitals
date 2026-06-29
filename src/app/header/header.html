@@ -12,16 +12,28 @@
       >CarVitals</span
     >
   </a>
-  <button
-    type="button"
-    (click)="theme.toggle()"
-    class="rounded-lg p-2 text-navy dark:text-dark-text hover:bg-silver-hover dark:hover:bg-dark-border transition-colors duration-300 cursor-pointer"
-    [attr.aria-label]="theme.isDark() ? 'Switch to light theme' : 'Switch to dark theme'"
-  >
-    @if (theme.isDark()) {
-      <svg lucideSun [size]="20"></svg>
-    } @else {
-      <svg lucideMoon [size]="20"></svg>
-    }
-  </button>
+
+  <div class="flex items-center gap-1">
+    <button
+      type="button"
+      (click)="translation.toggle()"
+      class="rounded-lg px-3 py-2 text-sm font-medium text-navy dark:text-dark-text hover:bg-silver-hover dark:hover:bg-dark-border transition-colors duration-300 cursor-pointer"
+      [attr.aria-label]="translation.lang() === 'en' ? 'Switch to Ukrainian' : 'Switch to English'"
+    >
+      {{ translation.lang() === 'en' ? 'UA' : 'EN' }}
+    </button>
+
+    <button
+      type="button"
+      (click)="theme.toggle()"
+      class="rounded-lg p-2 text-navy dark:text-dark-text hover:bg-silver-hover dark:hover:bg-dark-border transition-colors duration-300 cursor-pointer"
+      [attr.aria-label]="theme.isDark() ? 'Switch to light theme' : 'Switch to dark theme'"
+    >
+      @if (theme.isDark()) {
+        <svg lucideSun [size]="20"></svg>
+      } @else {
+        <svg lucideMoon [size]="20"></svg>
+      }
+    </button>
+  </div>
 </header>
