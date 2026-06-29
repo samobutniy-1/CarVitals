@@ -1,7 +1,11 @@
 <section class="flex flex-col justify-center px-4">
-  <h2 class="font-display font-medium text-3xl sm:text-[42px] mb-1 text-navy">Service schedule</h2>
+  <h2
+    class="font-display font-medium text-3xl sm:text-[42px] mb-1 text-navy dark:text-dark-text transition-colors duration-300"
+  >
+    Service schedule
+  </h2>
   <p
-    class="font-body font-light text-base sm:text-lg text-text-muted mb-4 max-w-full sm:max-w-[60%]"
+    class="font-body font-light text-base sm:text-lg text-text-muted dark:text-dark-text/70 mb-4 max-w-full sm:max-w-[60%] transition-colors duration-300"
   >
     Check when it's time to replace the part in question
   </p>
@@ -12,20 +16,20 @@
       <svg
         lucideSearch
         aria-hidden="true"
-        class="absolute left-3.5 top-1/2 -translate-y-1/2 text-text-muted w-4.5 h-4.5"
+        class="absolute left-3.5 top-1/2 -translate-y-1/2 text-text-muted dark:text-dark-text/70 w-4.5 h-4.5 transition-colors duration-300"
       ></svg>
       <input
         type="text"
         [(ngModel)]="searchQuery"
         placeholder="Search for the part.."
-        class="w-full pl-10 pr-3.5 py-2.5 sm:py-3 rounded-2xl shadow-sm border border-silver-border bg-white text-sm sm:text-[15px] text-navy-dark outline-none focus:border-accent transition duration-300"
+        class="w-full pl-10 pr-3.5 py-2.5 sm:py-3 rounded-2xl shadow-sm border border-silver-border dark:border-dark-border bg-white dark:bg-dark-surface text-sm sm:text-[15px] text-navy-dark dark:text-dark-text outline-none focus:border-accent transition-colors duration-300"
       />
     </div>
 
     <select
       id="fuelType"
       [(ngModel)]="selectedFuel"
-      class="px-5 py-2.5 sm:py-3 rounded-2xl shadow-sm border border-silver-border bg-white text-sm sm:text-[15px] text-text-muted outline-none cursor-pointer focus:border-accent transition duration-300"
+      class="px-5 py-2.5 sm:py-3 rounded-2xl shadow-sm border border-silver-border dark:border-dark-border bg-white dark:bg-dark-surface text-sm sm:text-[15px] text-text-muted dark:text-dark-text/70 outline-none cursor-pointer focus:border-accent transition-colors duration-300"
     >
       <option value="petrol">Petrol</option>
       <option value="diesel">Diesel</option>
@@ -35,10 +39,16 @@
 
   <!-- Disclaimer -->
   <div
-    class="flex gap-2 items-start p-3 sm:p-3.5 bg-silver-border shadow-md rounded-2xl mb-6 sm:mb-8"
+    class="flex gap-2 items-start p-3 sm:p-3.5 bg-silver-border dark:bg-dark-border shadow-md rounded-2xl mb-6 sm:mb-8 transition-colors duration-300"
   >
-    <svg lucideInfo aria-hidden="true" class="text-navy shrink-0 mt-0.5 w-4.5 h-4.5"></svg>
-    <p class="text-sm sm:text-base text-navy leading-relaxed m-0">
+    <svg
+      lucideInfo
+      aria-hidden="true"
+      class="text-navy dark:text-dark-text shrink-0 mt-0.5 w-4.5 h-4.5 transition-colors duration-300"
+    ></svg>
+    <p
+      class="text-sm sm:text-base text-navy dark:text-dark-text leading-relaxed m-0 transition-colors duration-300"
+    >
       Values shown are general industry averages and may not reflect your specific vehicle. Always
       check your vehicle's manufacturer service manual for exact intervals.
     </p>
@@ -46,18 +56,24 @@
 
   <!-- Table — desktop/tablet -->
   <div
-    class="hidden sm:flex flex-col w-full shadow-sm bg-white border border-silver-border rounded-2xl overflow-hidden"
+    class="hidden sm:flex flex-col w-full shadow-sm bg-white dark:bg-dark-surface border border-silver-border dark:border-dark-border rounded-2xl overflow-hidden transition-colors duration-300"
   >
     <table class="w-full border-collapse">
       <thead>
         <tr>
-          <th class="text-left pt-4 pb-3 px-5 font-medium text-navy border-b border-silver-border">
+          <th
+            class="text-left pt-4 pb-3 px-5 font-medium text-navy dark:text-dark-text border-b border-silver-border dark:border-dark-border transition-colors duration-300"
+          >
             Part name
           </th>
-          <th class="text-left pt-4 pb-3 px-5 font-medium text-navy border-b border-silver-border">
+          <th
+            class="text-left pt-4 pb-3 px-5 font-medium text-navy dark:text-dark-text border-b border-silver-border dark:border-dark-border transition-colors duration-300"
+          >
             Interval (km)
           </th>
-          <th class="text-left pt-4 pb-3 px-5 font-medium text-navy border-b border-silver-border">
+          <th
+            class="text-left pt-4 pb-3 px-5 font-medium text-navy dark:text-dark-text border-b border-silver-border dark:border-dark-border transition-colors duration-300"
+          >
             Interval (months)
           </th>
         </tr>
@@ -66,23 +82,20 @@
         @for (item of filteredItems(); track item.id; let last = $last) {
           <tr>
             <td
-              class="py-4 px-5 font-medium text-navy-dark"
-              [class.border-b]="!last"
-              [class.border-silver-border]="!last"
+              class="py-4 px-5 font-medium text-navy-dark dark:text-dark-text border-b border-silver-border dark:border-dark-border transition-colors duration-300"
+              [class.border-transparent]="last"
             >
               {{ item.name }}
             </td>
             <td
-              class="py-4 px-5 text-text-muted"
-              [class.border-b]="!last"
-              [class.border-silver-border]="!last"
+              class="py-4 px-5 text-text-muted dark:text-dark-text/70 border-b border-silver-border dark:border-dark-border transition-colors duration-300"
+              [class.border-transparent]="last"
             >
               {{ item.intervalKm }}
             </td>
             <td
-              class="py-4 px-5 text-text-muted"
-              [class.border-b]="!last"
-              [class.border-silver-border]="!last"
+              class="py-4 px-5 text-text-muted dark:text-dark-text/70 border-b border-silver-border dark:border-dark-border transition-colors duration-300"
+              [class.border-transparent]="last"
             >
               {{ item.intervalMonth }}
             </td>
@@ -95,9 +108,17 @@
   <!-- Cards — mobile only -->
   <ul class="flex sm:hidden flex-col gap-2.5">
     @for (item of filteredItems(); track item.id) {
-      <li class="shadow-sm bg-white border border-silver-border rounded-2xl p-4">
-        <p class="font-medium text-navy-dark text-base mb-2">{{ item.name }}</p>
-        <div class="flex justify-between text-sm text-text-muted">
+      <li
+        class="shadow-sm bg-white dark:bg-dark-surface border border-silver-border dark:border-dark-border rounded-2xl p-4 transition-colors duration-300"
+      >
+        <p
+          class="font-medium text-navy-dark dark:text-dark-text text-base mb-2 transition-colors duration-300"
+        >
+          {{ item.name }}
+        </p>
+        <div
+          class="flex justify-between text-sm text-text-muted dark:text-dark-text/70 transition-colors duration-300"
+        >
           <span>{{ item.intervalKm }} km</span>
           <span>{{ item.intervalMonth }} months</span>
         </div>
