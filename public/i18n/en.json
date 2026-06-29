@@ -1,0 +1,60 @@
+{
+  "header": {
+    "appName": "CarVitals"
+  },
+  "hero": {
+    "badge": "AI-powered diagnostics",
+    "title": "Know your car's vitals",
+    "subtitle": "Track maintenance, spot what's wrong, and get answers from an AI mechanic who knows your car.",
+    "symptomChecker": {
+      "title": "Symptom checker",
+      "description": "Squealing brakes? Suspension knock? Find the likely cause."
+    },
+    "serviceSchedule": {
+      "title": "Service schedule",
+      "description": "Oil, filters, fluids — know what's due and when."
+    },
+    "aiChat": {
+      "title": "AI mechanic chat",
+      "description": "Ask anything, get answers tuned to your exact car."
+    },
+    "tutorials": {
+      "title": "Tutorials",
+      "description": "Step-by-step guides with photos and videos for common fixes."
+    }
+  },
+  "serviceSchedulePage": {
+    "title": "Service schedule",
+    "subtitle": "Check when it's time to replace the part in question",
+    "searchPlaceholder": "Search for the part..",
+    "disclaimer": "Values shown are general industry averages and may not reflect your specific vehicle. Always check your vehicle's manufacturer service manual for exact intervals.",
+    "partName": "Part name",
+    "intervalKm": "Interval (km)",
+    "intervalMonths": "Interval (months)"
+  },
+  "symptomChecker": {
+    "title": "Symptom checker",
+    "subtitle": "Pick the part of your car, then describe what's happening.",
+    "categories": {
+      "brakes": "Brakes",
+      "suspension": "Suspension",
+      "engine": "Engine",
+      "electrical": "Electrical"
+    },
+    "questionLabel": "What does it sound/feel like?",
+    "likelyCauses": "Likely causes",
+    "mostLikely": "Most likely"
+  },
+  "tutorials": {
+    "title": "Repair tutorials",
+    "vehicleSystems": "Vehicle systems",
+    "selectComponent": "- select a component:",
+    "toolsNeeded": "Tools needed",
+    "steps": "Steps",
+    "replacing": "Replacing"
+  },
+  "chat": {
+    "placeholder": "Ask a question...",
+    "send": "Send"
+  }
+}
