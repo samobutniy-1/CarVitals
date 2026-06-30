@@ -1,7 +1,8 @@
-import { Component, signal, computed } from '@angular/core';
+import { Component, signal, computed, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { MaintenanceItem } from '../models/maintenance-item.model';
 import { LucideSearch, LucideInfo } from '@lucide/angular';
+import { TranslationService } from '../services/translation.service';
 
 @Component({
   selector: 'app-service-schedule',
@@ -10,151 +11,160 @@ import { LucideSearch, LucideInfo } from '@lucide/angular';
   styleUrl: './service-schedule.css',
 })
 export class ServiceSchedule {
+  readonly translation = inject(TranslationService);
   searchQuery = signal('');
 
-  //Table data
   MAINTENANCE_ITEMS: MaintenanceItem[] = [
     {
       id: '1',
-      name: 'Engine oil & filter',
+      nameKey: 'serviceSchedulePage.items.engineOilFilter',
       intervalKm: 10000,
       intervalMonth: 12,
       fuelTypes: ['petrol', 'lpg'],
     },
     {
       id: '2',
-      name: 'Engine oil & filter',
+      nameKey: 'serviceSchedulePage.items.engineOilFilter',
       intervalKm: 15000,
       intervalMonth: 12,
       fuelTypes: ['diesel'],
     },
-
     {
       id: '3',
-      name: 'Air filter',
+      nameKey: 'serviceSchedulePage.items.airFilter',
       intervalKm: 30000,
       intervalMonth: 24,
       fuelTypes: ['petrol', 'diesel', 'lpg'],
     },
-
     {
       id: '4',
-      name: 'Cabin (pollen) filter',
+      nameKey: 'serviceSchedulePage.items.cabinFilter',
       intervalKm: 15000,
       intervalMonth: 12,
       fuelTypes: ['petrol', 'diesel', 'lpg'],
     },
-
-    { id: '5', name: 'Fuel filter', intervalKm: 30000, intervalMonth: 24, fuelTypes: ['petrol'] },
-    { id: '6', name: 'Fuel filter', intervalKm: 20000, intervalMonth: 24, fuelTypes: ['diesel'] },
-    { id: '7', name: 'LPG filter', intervalKm: 10000, intervalMonth: 12, fuelTypes: ['lpg'] },
-
+    {
+      id: '5',
+      nameKey: 'serviceSchedulePage.items.fuelFilter',
+      intervalKm: 30000,
+      intervalMonth: 24,
+      fuelTypes: ['petrol'],
+    },
+    {
+      id: '6',
+      nameKey: 'serviceSchedulePage.items.fuelFilter',
+      intervalKm: 20000,
+      intervalMonth: 24,
+      fuelTypes: ['diesel'],
+    },
+    {
+      id: '7',
+      nameKey: 'serviceSchedulePage.items.lpgFilter',
+      intervalKm: 10000,
+      intervalMonth: 12,
+      fuelTypes: ['lpg'],
+    },
     {
       id: '8',
-      name: 'Spark plugs',
+      nameKey: 'serviceSchedulePage.items.sparkPlugs',
       intervalKm: 40000,
       intervalMonth: 48,
       fuelTypes: ['petrol', 'lpg'],
     },
-
     {
       id: '9',
-      name: 'Timing belt',
+      nameKey: 'serviceSchedulePage.items.timingBelt',
       intervalKm: 100000,
       intervalMonth: 60,
       fuelTypes: ['petrol', 'diesel', 'lpg'],
     },
     {
       id: '10',
-      name: 'Timing chain inspection',
+      nameKey: 'serviceSchedulePage.items.timingChainInspection',
       intervalKm: 120000,
       intervalMonth: 96,
       fuelTypes: ['petrol', 'diesel', 'lpg'],
     },
-
     {
       id: '11',
-      name: 'Brake fluid',
+      nameKey: 'serviceSchedulePage.items.brakeFluid',
       intervalKm: 30000,
       intervalMonth: 24,
       fuelTypes: ['petrol', 'diesel', 'lpg'],
     },
     {
       id: '12',
-      name: 'Coolant',
+      nameKey: 'serviceSchedulePage.items.coolant',
       intervalKm: 60000,
       intervalMonth: 60,
       fuelTypes: ['petrol', 'diesel', 'lpg'],
     },
     {
       id: '13',
-      name: 'Brake pads (front)',
+      nameKey: 'serviceSchedulePage.items.brakePadsFront',
       intervalKm: 40000,
       intervalMonth: 36,
       fuelTypes: ['petrol', 'diesel', 'lpg'],
     },
     {
       id: '14',
-      name: 'Brake pads (rear)',
+      nameKey: 'serviceSchedulePage.items.brakePadsRear',
       intervalKm: 60000,
       intervalMonth: 48,
       fuelTypes: ['petrol', 'diesel', 'lpg'],
     },
     {
       id: '15',
-      name: 'Brake discs',
+      nameKey: 'serviceSchedulePage.items.brakeDiscs',
       intervalKm: 80000,
       intervalMonth: 60,
       fuelTypes: ['petrol', 'diesel', 'lpg'],
     },
-
     {
       id: '16',
-      name: 'Transmission fluid (manual)',
+      nameKey: 'serviceSchedulePage.items.transmissionFluidManual',
       intervalKm: 80000,
       intervalMonth: 72,
       fuelTypes: ['petrol', 'diesel', 'lpg'],
     },
     {
       id: '17',
-      name: 'Transmission fluid (automatic)',
+      nameKey: 'serviceSchedulePage.items.transmissionFluidAutomatic',
       intervalKm: 60000,
       intervalMonth: 60,
       fuelTypes: ['petrol', 'diesel', 'lpg'],
     },
-
     {
       id: '18',
-      name: 'Diesel particulate filter (DPF) check',
+      nameKey: 'serviceSchedulePage.items.dpfCheck',
       intervalKm: 20000,
       intervalMonth: 24,
       fuelTypes: ['diesel'],
     },
     {
       id: '19',
-      name: 'AdBlue/SCR system check',
+      nameKey: 'serviceSchedulePage.items.adBlueCheck',
       intervalKm: 10000,
       intervalMonth: 12,
       fuelTypes: ['diesel'],
     },
-
     {
       id: '20',
-      name: 'Wiper blades',
+      nameKey: 'serviceSchedulePage.items.wiperBlades',
       intervalKm: 15000,
       intervalMonth: 12,
       fuelTypes: ['petrol', 'diesel', 'lpg'],
     },
     {
       id: '21',
-      name: 'Battery check',
+      nameKey: 'serviceSchedulePage.items.batteryCheck',
       intervalKm: 20000,
       intervalMonth: 24,
       fuelTypes: ['petrol', 'diesel', 'lpg'],
     },
     {
       id: '22',
-      name: 'Tire rotation',
+      nameKey: 'serviceSchedulePage.items.tireRotation',
       intervalKm: 10000,
       intervalMonth: 12,
       fuelTypes: ['petrol', 'diesel', 'lpg'],
@@ -168,7 +178,8 @@ export class ServiceSchedule {
     const fuel = this.selectedFuel();
 
     return this.MAINTENANCE_ITEMS.filter((item) => {
-      const matchesQuery = item.name.toLowerCase().includes(query);
+      const translatedName = this.translation.t(item.nameKey).toLowerCase();
+      const matchesQuery = translatedName.includes(query);
       const matchesFuel = item.fuelTypes.includes(fuel);
 
       return matchesQuery && matchesFuel;

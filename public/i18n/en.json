@@ -1,5 +1,4 @@
 {
-  "header": {},
   "hero": {
     "badge": "AI-powered diagnostics",
     "title": "Know your car's vitals",
@@ -28,7 +27,29 @@
     "disclaimer": "Values shown are general industry averages and may not reflect your specific vehicle. Always check your vehicle's manufacturer service manual for exact intervals.",
     "partName": "Part name",
     "intervalKm": "Interval (km)",
-    "intervalMonths": "Interval (months)"
+    "intervalMonths": "Interval (months)",
+    "items": {
+      "engineOilFilter": "Engine oil & filter",
+      "airFilter": "Air filter",
+      "cabinFilter": "Cabin (pollen) filter",
+      "fuelFilter": "Fuel filter",
+      "lpgFilter": "LPG filter",
+      "sparkPlugs": "Spark plugs",
+      "timingBelt": "Timing belt",
+      "timingChainInspection": "Timing chain inspection",
+      "brakeFluid": "Brake fluid",
+      "coolant": "Coolant",
+      "brakePadsFront": "Brake pads (front)",
+      "brakePadsRear": "Brake pads (rear)",
+      "brakeDiscs": "Brake discs",
+      "transmissionFluidManual": "Transmission fluid (manual)",
+      "transmissionFluidAutomatic": "Transmission fluid (automatic)",
+      "dpfCheck": "Diesel particulate filter (DPF) check",
+      "adBlueCheck": "AdBlue/SCR system check",
+      "wiperBlades": "Wiper blades",
+      "batteryCheck": "Battery check",
+      "tireRotation": "Tire rotation"
+    }
   },
   "symptomChecker": {
     "title": "Symptom checker",

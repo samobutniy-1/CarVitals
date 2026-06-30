@@ -1,6 +1,6 @@
 export interface MaintenanceItem {
   id: string;
-  name: string;
+  nameKey: string;
   intervalKm: number;
   intervalMonth: number;
   fuelTypes: ('petrol' | 'diesel' | 'lpg')[];

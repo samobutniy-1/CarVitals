@@ -2,12 +2,12 @@
   <h2
     class="font-display font-medium text-3xl sm:text-[42px] mb-1 text-navy dark:text-dark-text transition-colors duration-300"
   >
-    Service schedule
+    {{ translation.t('serviceSchedulePage.title') }}
   </h2>
   <p
     class="font-body font-light text-base sm:text-lg text-text-muted dark:text-dark-text/70 mb-4 max-w-full sm:max-w-[60%] transition-colors duration-300"
   >
-    Check when it's time to replace the part in question
+    {{ translation.t('serviceSchedulePage.subtitle') }}
   </p>
 
   <!-- Search + fuel filter -->
@@ -21,7 +21,7 @@
       <input
         type="text"
         [(ngModel)]="searchQuery"
-        placeholder="Search for the part.."
+        [placeholder]="translation.t('serviceSchedulePage.searchPlaceholder')"
         class="w-full pl-10 pr-3.5 py-2.5 sm:py-3 rounded-2xl shadow-sm border border-silver-border dark:border-dark-border bg-white dark:bg-dark-surface text-sm sm:text-[15px] text-navy-dark dark:text-dark-text outline-none focus:border-accent transition-colors duration-300"
       />
     </div>
@@ -49,8 +49,7 @@
     <p
       class="text-sm sm:text-base text-navy dark:text-dark-text leading-relaxed m-0 transition-colors duration-300"
     >
-      Values shown are general industry averages and may not reflect your specific vehicle. Always
-      check your vehicle's manufacturer service manual for exact intervals.
+      {{ translation.t('serviceSchedulePage.disclaimer') }}
     </p>
   </div>
 
@@ -64,17 +63,17 @@
           <th
             class="text-left pt-4 pb-3 px-5 font-medium text-navy dark:text-dark-text border-b border-silver-border dark:border-dark-border transition-colors duration-300"
           >
-            Part name
+            {{ translation.t('serviceSchedulePage.partName') }}
           </th>
           <th
             class="text-left pt-4 pb-3 px-5 font-medium text-navy dark:text-dark-text border-b border-silver-border dark:border-dark-border transition-colors duration-300"
           >
-            Interval (km)
+            {{ translation.t('serviceSchedulePage.intervalKm') }}
           </th>
           <th
             class="text-left pt-4 pb-3 px-5 font-medium text-navy dark:text-dark-text border-b border-silver-border dark:border-dark-border transition-colors duration-300"
           >
-            Interval (months)
+            {{ translation.t('serviceSchedulePage.intervalMonths') }}
           </th>
         </tr>
       </thead>
@@ -85,7 +84,7 @@
               class="py-4 px-5 font-medium text-navy-dark dark:text-dark-text border-b border-silver-border dark:border-dark-border transition-colors duration-300"
               [class.border-transparent]="last"
             >
-              {{ item.name }}
+              {{ translation.t(item.nameKey) }}
             </td>
             <td
               class="py-4 px-5 text-text-muted dark:text-dark-text/70 border-b border-silver-border dark:border-dark-border transition-colors duration-300"
@@ -114,7 +113,7 @@
         <p
           class="font-medium text-navy-dark dark:text-dark-text text-base mb-2 transition-colors duration-300"
         >
-          {{ item.name }}
+          {{ translation.t(item.nameKey) }}
         </p>
         <div
           class="flex justify-between text-sm text-text-muted dark:text-dark-text/70 transition-colors duration-300"

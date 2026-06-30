@@ -1,0 +1,201 @@
+* [33mcommit 24acf835216afcd69c0eded92526d02681fe93c0[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m
+[31m|[m Author: webOwl <nikitaterentev916@gmail.com>
+[31m|[m Date:   Mon Jun 29 17:24:30 2026 +0200
+[31m|[m 
+[31m|[m     feat: apply translation to HeroSection
+[31m|[m 
+* [33mcommit d4d4cd64db94a1022ab974b24e8ab9e582dbc42a[m
+[31m|[m Author: webOwl <nikitaterentev916@gmail.com>
+[31m|[m Date:   Mon Jun 29 17:15:56 2026 +0200
+[31m|[m 
+[31m|[m     feat: add language toggle button to header
+[31m|[m 
+* [33mcommit d9e5a7dd6a7e47d78c4aaf4e113424f94edb550c[m
+[31m|[m Author: webOwl <nikitaterentev916@gmail.com>
+[31m|[m Date:   Mon Jun 29 17:12:18 2026 +0200
+[31m|[m 
+[31m|[m     feat: add translation service with JSON-based i18n
+[31m|[m 
+* [33mcommit 502dd0a5b5a6f92f2e144297575719a50bb2cadc[m
+[31m|[m Author: webOwl <nikitaterentev916@gmail.com>
+[31m|[m Date:   Mon Jun 29 13:50:34 2026 +0200
+[31m|[m 
+[31m|[m     feat: add dark mode styles to Chat
+[31m|[m 
+* [33mcommit cc9256861541ec1fe81090894475965d4f45e1b5[m
+[31m|[m Author: webOwl <nikitaterentev916@gmail.com>
+[31m|[m Date:   Mon Jun 29 13:45:51 2026 +0200
+[31m|[m 
+[31m|[m     feat: add dark mode styles to Tutorials
+[31m|[m 
+* [33mcommit 7f1efbed5f49d866b8653d45432dff6da20acd6a[m
+[31m|[m Author: webOwl <nikitaterentev916@gmail.com>
+[31m|[m Date:   Mon Jun 29 13:37:12 2026 +0200
+[31m|[m 
+[31m|[m     feat: add dark mode styles to SymptomChecker
+[31m|[m 
+* [33mcommit 3631508e8b6b4aac17630917147fef1711e9f89f[m
+[31m|[m Author: webOwl <nikitaterentev916@gmail.com>
+[31m|[m Date:   Mon Jun 29 13:31:39 2026 +0200
+[31m|[m 
+[31m|[m     feat: add dark mode styles to ServiceSchedule
+[31m|[m 
+* [33mcommit 460a37d64b4514274207c8068b134c3d6fc13be9[m
+[31m|[m Author: webOwl <nikitaterentev916@gmail.com>
+[31m|[m Date:   Mon Jun 29 13:24:59 2026 +0200
+[31m|[m 
+[31m|[m     feat: add dark mode styles to HeroSection
+[31m|[m 
+* [33mcommit c2c036ecb84b66611c5236d3027467347dd246a9[m
+[31m|[m Author: webOwl <nikitaterentev916@gmail.com>
+[31m|[m Date:   Mon Jun 29 12:45:35 2026 +0200
+[31m|[m 
+[31m|[m     feat: add dark/light theme toggle with persistence
+[31m|[m 
+* [33mcommit 9847dfc52a912f37334e22a6bf389d91ddbf79dc[m
+[31m|[m Author: webOwl <nikitaterentev916@gmail.com>
+[31m|[m Date:   Sat Jun 27 14:08:50 2026 +0200
+[31m|[m 
+[31m|[m     feat: add mobile first responsive styles to Chat
+[31m|[m 
+* [33mcommit 1f29086b30be048c22ffedeb6b136df3b36803a1[m
+[31m|[m Author: webOwl <nikitaterentev916@gmail.com>
+[31m|[m Date:   Sat Jun 27 14:06:46 2026 +0200
+[31m|[m 
+[31m|[m     feat: add mobile first responsive styles to Tutorials
+[31m|[m 
+* [33mcommit 384c74fde09e178ff04ad70590be57c6698bcea8[m
+[31m|[m Author: webOwl <nikitaterentev916@gmail.com>
+[31m|[m Date:   Sat Jun 27 14:03:01 2026 +0200
+[31m|[m 
+[31m|[m     feat: add mobile first responsive styles to SymptomChecker
+[31m|[m 
+* [33mcommit 847598445a4cb8452534bc9cad13492f0b8fccb5[m
+[31m|[m Author: webOwl <nikitaterentev916@gmail.com>
+[31m|[m Date:   Sat Jun 27 13:57:12 2026 +0200
+[31m|[m 
+[31m|[m     feat: add mobile first responsive styles to ServiceSchedule
+[31m|[m 
+* [33mcommit 31fbdac746822014a67b6bcd745a9fdecceb962c[m
+[31m|[m Author: webOwl <nikitaterentev916@gmail.com>
+[31m|[m Date:   Sat Jun 27 13:52:29 2026 +0200
+[31m|[m 
+[31m|[m     feat: add mobile first responsive styles to HeroSection
+[31m|[m 
+* [33mcommit 25a064f1c6b757d21c34dc52b46dda832b1446ea[m
+[31m|[m Author: webOwl <nikitaterentev916@gmail.com>
+[31m|[m Date:   Sat Jun 27 13:48:46 2026 +0200
+[31m|[m 
+[31m|[m     style: add styles to Tutorials component
+[31m|[m 
+* [33mcommit 5e1467ca4c1675cddf6da91f69456b3a3858715f[m
+[31m|[m Author: webOwl <nikitaterentev916@gmail.com>
+[31m|[m Date:   Sat Jun 27 13:18:58 2026 +0200
+[31m|[m 
+[31m|[m     style: add styles to ServiceSchedule component
+[31m|[m 
+* [33mcommit 5d7cc69de920516bde9277e82e9854ce148c97b6[m
+[31m|[m Author: webOwl <nikitaterentev916@gmail.com>
+[31m|[m Date:   Sat Jun 27 12:53:56 2026 +0200
+[31m|[m 
+[31m|[m     fix: pin input to bottom of chat window
+[31m|[m 
+* [33mcommit a0131e9e5667597b69c172c34ab488c3ff5f8ade[m
+[31m|[m Author: webOwl <nikitaterentev916@gmail.com>
+[31m|[m Date:   Sat Jun 27 12:45:35 2026 +0200
+[31m|[m 
+[31m|[m     style: add styles to AI Chat
+[31m|[m 
+* [33mcommit f9f4dbac788affb31b462f9c0a4a37e5503a3163[m
+[31m|[m Author: webOwl <nikitaterentev916@gmail.com>
+[31m|[m Date:   Fri Jun 26 18:19:07 2026 +0200
+[31m|[m 
+[31m|[m     style: add styles to SymptomChecker component
+[31m|[m 
+* [33mcommit 0d29978861cfdc9937c3b7b9b5373d8a254ce99c[m
+[31m|[m Author: webOwl <nikitaterentev916@gmail.com>
+[31m|[m Date:   Fri Jun 26 16:53:56 2026 +0200
+[31m|[m 
+[31m|[m     style: add styles to HeroSection component
+[31m|[m 
+* [33mcommit c6a3150a2c0beef42a1a5edb127e861e9495db7c[m
+[31m|[m Author: webOwl <nikitaterentev916@gmail.com>
+[31m|[m Date:   Fri Jun 26 12:00:45 2026 +0200
+[31m|[m 
+[31m|[m     style: add styles to header
+[31m|[m 
+* [33mcommit 2ee88db2755a880622aaa9d6821be5747d4a1dd5[m
+[31m|[m Author: webOwl <nikitaterentev916@gmail.com>
+[31m|[m Date:   Fri Jun 26 11:01:54 2026 +0200
+[31m|[m 
+[31m|[m     refactor: move chat component behind dedicated route
+[31m|[m 
+* [33mcommit 7e1c0bfc70f556df741072b5a1d5147d66cf53bb[m
+[31m|[m Author: webOwl <nikitaterentev916@gmail.com>
+[31m|[m Date:   Thu Jun 25 14:23:59 2026 +0200
+[31m|[m 
+[31m|[m     feat: create logic and HTML structure for Tutorials component, add component to routes
+[31m|[m 
+* [33mcommit 214a3dfb95d0b9a5603dab66a6275537f4686628[m
+[31m|[m Author: webOwl <nikitaterentev916@gmail.com>
+[31m|[m Date:   Tue Jun 23 18:52:01 2026 +0200
+[31m|[m 
+[31m|[m     feat: add mechanic persona system instruction to Gemini proxy
+[31m|[m 
+* [33mcommit db5523336bc386e620f4bdb44392d3e642fcd661[m
+[31m|[m Author: webOwl <nikitaterentev916@gmail.com>
+[31m|[m Date:   Tue Jun 23 18:42:37 2026 +0200
+[31m|[m 
+[31m|[m     feat: add Gemini chatbot with Vercel proxy
+[31m|[m 
+* [33mcommit 34a5d4d94e22a3b177fa945ced0623c15b821b18[m
+[31m|[m Author: webOwl <nikitaterentev916@gmail.com>
+[31m|[m Date:   Tue Jun 23 15:39:57 2026 +0200
+[31m|[m 
+[31m|[m     refactor: use ngModel for input and fuel select
+[31m|[m 
+* [33mcommit 511ea93339b771f85848361f923c0ec7df7a3302[m
+[31m|[m Author: webOwl <nikitaterentev916@gmail.com>
+[31m|[m Date:   Tue Jun 23 13:48:34 2026 +0200
+[31m|[m 
+[31m|[m     feat: create ServiceSchedule component
+[31m|[m     
+[31m|[m     - Add service schedule table
+[31m|[m     
+[31m|[m     - Add MaintenanceItem interface and data model
+[31m|[m     
+[31m|[m     - Add fuel type select filter(petrol/diesel/lpg)
+[31m|[m 
+* [33mcommit fc15d82c12cc065d5a02b9262e5bdc6f4cbab45c[m
+[31m|[m Author: webOwl <nikitaterentev916@gmail.com>
+[31m|[m Date:   Mon Jun 22 18:47:12 2026 +0200
+[31m|[m 
+[31m|[m     refactor: clean up HTML structure
+[31m|[m 
+* [33mcommit f507c18d5520c27b3bba797a17890c128bbd23d1[m
+[31m|[m Author: webOwl <nikitaterentev916@gmail.com>
+[31m|[m Date:   Mon Jun 22 15:35:02 2026 +0200
+[31m|[m 
+[31m|[m     feat: create logic and HTML structure for SymptomChecker component
+[31m|[m     
+[31m|[m     feat: update routing
+[31m|[m 
+* [33mcommit 971183ac8c6b7719801906abdb7632ad3ba51ecb[m
+[31m|[m Author: webOwl <nikitaterentev916@gmail.com>
+[31m|[m Date:   Sat Jun 20 15:17:34 2026 +0200
+[31m|[m 
+[31m|[m     feat: create hero-section HTML-structure
+[31m|[m 
+* [33mcommit df8404a1c6edf48a7ec6d468498f6cbb5d63a9de[m
+[31m|[m Author: webOwl <nikitaterentev916@gmail.com>
+[31m|[m Date:   Sat Jun 20 14:54:57 2026 +0200
+[31m|[m 
+[31m|[m     feat: create header HTML-structure
+[31m|[m 
+* [33mcommit 6c6f60eb1bffb8f8ab5ea39db7e61d75362005a7[m
+[31m|[m Author: webOwl <nikitaterentev916@gmail.com>
+[31m|[m Date:   Sat Jun 20 14:34:06 2026 +0200
+[31m|[m 
+[31m|[m     feat: initial project setup
+[31m|[m 
+* [33mcommit 2c1754bd5
