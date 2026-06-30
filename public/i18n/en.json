@@ -231,6 +231,8 @@
   },
   "chat": {
     "placeholder": "Ask a question...",
-    "send": "Send"
+    "send": "Send",
+    "errorResponse": "Error getting response",
+    "errorRequest": "Error sending request"
   }
 }
