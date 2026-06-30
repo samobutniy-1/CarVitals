@@ -3,6 +3,7 @@ import { FormsModule } from '@angular/forms';
 import { GeminiService } from '../gemini';
 import { LucideWrench, LucideSend } from '@lucide/angular';
 import { TranslationService } from '../services/translation.service';
+import { marked } from 'marked';
 
 @Component({
   selector: 'app-chat',
@@ -21,5 +22,9 @@ export class ChatComponent {
     if (!text) return;
     this.gemini.sendMessage(text);
     this.userInput.set('');
+  }
+
+  renderMarkdown(text: string): string {
+    return marked.parse(text, { async: false }) as string;
   }
 }
