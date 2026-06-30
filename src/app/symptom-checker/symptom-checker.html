@@ -2,12 +2,12 @@
   <h2
     class="font-display font-medium text-3xl sm:text-[42px] mb-1 text-navy dark:text-dark-text transition-colors duration-300"
   >
-    Symptom checker
+    {{ translation.t('symptomChecker.title') }}
   </h2>
   <p
     class="font-body font-light text-base sm:text-lg text-text-muted dark:text-dark-text/70 mb-4 max-w-full sm:max-w-[60%] transition-colors duration-300"
   >
-    Pick the part of your car, then describe what's happening.
+    {{ translation.t('symptomChecker.subtitle') }}
   </p>
 
   <!-- Symptom type -->
@@ -39,7 +39,7 @@
               'text-accent': selectedCategory() === 'brakes',
               'text-text-muted dark:text-dark-text/70': selectedCategory() !== 'brakes',
             }"
-            >Brakes</span
+            >{{ translation.t('symptomChecker.categories.brakes') }}</span
           >
         </button>
       </li>
@@ -69,7 +69,7 @@
               'text-accent': selectedCategory() === 'suspension',
               'text-text-muted dark:text-dark-text/70': selectedCategory() !== 'suspension',
             }"
-            >Suspension</span
+            >{{ translation.t('symptomChecker.categories.suspension') }}</span
           >
         </button>
       </li>
@@ -99,7 +99,7 @@
               'text-accent': selectedCategory() === 'engine',
               'text-text-muted dark:text-dark-text/70': selectedCategory() !== 'engine',
             }"
-            >Engine</span
+            >{{ translation.t('symptomChecker.categories.engine') }}</span
           >
         </button>
       </li>
@@ -129,7 +129,7 @@
               'text-accent': selectedCategory() === 'electrical',
               'text-text-muted dark:text-dark-text/70': selectedCategory() !== 'electrical',
             }"
-            >Electrical</span
+            >{{ translation.t('symptomChecker.categories.electrical') }}</span
           >
         </button>
       </li>
@@ -149,7 +149,7 @@
         ></svg>
         <span
           class="font-body font-medium text-navy dark:text-dark-text text-base sm:text-xl transition-colors duration-300"
-          >What does it sound/feel like?</span
+          >{{ translation.t('symptomChecker.questionLabel') }}</span
         >
       </legend>
 
@@ -170,7 +170,7 @@
               'text-navy-dark dark:text-dark-text font-medium': selectedSymptom() === option.value,
               'text-text-muted dark:text-dark-text/70': selectedSymptom() !== option.value,
             }"
-            >{{ option.label }}</span
+            >{{ translation.t(option.labelKey) }}</span
           ></label
         >
       }
@@ -183,7 +183,7 @@
       <p
         class="font-display font-light text-text-muted dark:text-dark-text/70 text-base sm:text-xl mb-3 sm:mb-4 pl-1 transition-colors duration-300"
       >
-        Likely causes
+        {{ translation.t('symptomChecker.likelyCauses') }}
       </p>
       <ul class="flex flex-col gap-2.5 sm:gap-3">
         @for (cause of filteredCauses(); track cause.symptom) {
@@ -196,12 +196,12 @@
               class="text-sm sm:text-lg text-navy-dark dark:text-dark-text m-0 transition-colors duration-300"
               [class.font-medium]="cause.mostLikely"
             >
-              {{ cause.label }}
+              {{ translation.t(cause.labelKey) }}
             </p>
             @if (cause.mostLikely) {
               <span
                 class="text-[11px] sm:text-[12px] text-accent bg-accent/10 py-1 px-2.5 rounded-full w-fit"
-                >Most likely</span
+                >{{ translation.t('symptomChecker.mostLikely') }}</span
               >
             }
           </li>
