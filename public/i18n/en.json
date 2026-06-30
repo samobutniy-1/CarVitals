@@ -147,7 +147,87 @@
     "selectComponent": "- select a component:",
     "toolsNeeded": "Tools needed",
     "steps": "Steps",
-    "replacing": "Replacing"
+    "replacing": "Replacing",
+    "systems": {
+      "engine": "Engine",
+      "suspension": "Suspension",
+      "brakes": "Brakes",
+      "electrical": "Electrical"
+    },
+    "tools": {
+      "sparkPlugSocket": "Spark plug socket",
+      "extensionBar": "Extension bar",
+      "torqueWrench": "Torque wrench",
+      "feelerGauge": "Feeler gauge",
+      "jack": "Jack",
+      "jackStands": "Jack stands",
+      "socketSet": "Socket set",
+      "springCompressor": "Spring compressor",
+      "lugWrench": "Lug wrench",
+      "cClamp": "C-clamp",
+      "wrenchSet": "Wrench set",
+      "wireBrush": "Wire brush",
+      "batteryTerminalGrease": "Battery terminal grease"
+    },
+    "items": {
+      "sparkPlugs": {
+        "name": "Spark plugs",
+        "steps": {
+          "1": "Let the engine cool down before starting",
+          "2": "Remove the ignition coils or plug wires",
+          "3": "Unscrew the old spark plug with the socket",
+          "4": "Check the gap on the new plug with the feeler gauge",
+          "5": "Hand-tighten the new plug, then finish with the torque wrench"
+        },
+        "links": {
+          "video": "Video: spark plug replacement step by step",
+          "article": "Article: how to choose the right spark plugs"
+        }
+      },
+      "shockAbsorbers": {
+        "name": "Shock absorbers",
+        "steps": {
+          "1": "Lift the car and secure it on jack stands",
+          "2": "Remove the wheel",
+          "3": "Loosen the top and bottom shock mounts",
+          "4": "Remove the old shock absorber",
+          "5": "Install the new shock and tighten the mounts",
+          "6": "Reattach the wheel and lower the car"
+        },
+        "links": {
+          "video": "Video: replacing shock absorbers"
+        }
+      },
+      "brakePads": {
+        "name": "Brake pads",
+        "steps": {
+          "1": "Lift the car and remove the wheel",
+          "2": "Remove the caliper and slide it aside",
+          "3": "Take out the old brake pads",
+          "4": "Compress the piston with the C-clamp",
+          "5": "Install the new pads and refit the caliper",
+          "6": "Pump the brake pedal a few times before driving"
+        },
+        "links": {
+          "video": "Video: brake pad replacement",
+          "article": "Article: when to replace brake pads"
+        }
+      },
+      "battery": {
+        "name": "Battery",
+        "steps": {
+          "1": "Turn off the engine and remove the key",
+          "2": "Disconnect the negative terminal first, then the positive",
+          "3": "Remove the battery hold-down bracket",
+          "4": "Lift out the old battery",
+          "5": "Clean the terminals with the wire brush",
+          "6": "Install the new battery and reconnect positive first, then negative"
+        },
+        "links": {
+          "video": "Video: how to replace a car battery"
+        }
+      }
+    }
   },
   "chat": {
     "placeholder": "Ask a question...",

@@ -1,24 +1,24 @@
 export interface TutorialStep {
   order: string;
-  text: string;
+  textKey: string;
   image?: string;
 }
 
 export interface TutorialLink {
-  title: string;
+  titleKey: string;
   link: string;
 }
 
 export interface Tutorial {
   id: string;
-  name: string;
+  nameKey: string;
   systemId: string;
-  tools: string[];
+  toolKeys: string[];
   steps: TutorialStep[];
   links: TutorialLink[];
 }
 
 export interface VehicleSystem {
   id: string;
-  name: string;
+  nameKey: string;
 }

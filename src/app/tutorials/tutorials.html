@@ -2,7 +2,7 @@
   <h2
     class="font-display font-medium text-3xl sm:text-[42px] mb-1 text-navy dark:text-dark-text transition-colors duration-300"
   >
-    Repair tutorials
+    {{ translation.t('tutorials.title') }}
   </h2>
 
   <!-- Vehicle systems -->
@@ -10,7 +10,7 @@
     <p
       class="font-body font-light text-base sm:text-lg text-text-muted dark:text-dark-text/70 mb-3 sm:mb-4 transition-colors duration-300"
     >
-      Vehicle systems
+      {{ translation.t('tutorials.vehicleSystems') }}
     </p>
     <ul class="grid grid-cols-2 sm:grid-cols-4 gap-2.5">
       <li>
@@ -39,7 +39,7 @@
               'text-accent': selectedSystemId() === 'engine',
               'text-text-muted dark:text-dark-text/70': selectedSystemId() !== 'engine',
             }"
-            >Engine</span
+            >{{ translation.t('tutorials.systems.engine') }}</span
           >
         </button>
       </li>
@@ -69,7 +69,7 @@
               'text-accent': selectedSystemId() === 'suspension',
               'text-text-muted dark:text-dark-text/70': selectedSystemId() !== 'suspension',
             }"
-            >Suspension</span
+            >{{ translation.t('tutorials.systems.suspension') }}</span
           >
         </button>
       </li>
@@ -99,7 +99,7 @@
               'text-accent': selectedSystemId() === 'brakes',
               'text-text-muted dark:text-dark-text/70': selectedSystemId() !== 'brakes',
             }"
-            >Brakes</span
+            >{{ translation.t('tutorials.systems.brakes') }}</span
           >
         </button>
       </li>
@@ -129,7 +129,7 @@
               'text-accent': selectedSystemId() === 'electrical',
               'text-text-muted dark:text-dark-text/70': selectedSystemId() !== 'electrical',
             }"
-            >Electrical</span
+            >{{ translation.t('tutorials.systems.electrical') }}</span
           >
         </button>
       </li>
@@ -141,7 +141,8 @@
     <p
       class="font-body font-light text-base sm:text-lg text-text-muted dark:text-dark-text/70 mb-3 sm:mb-4 transition-colors duration-300"
     >
-      {{ selectedSystem()?.name }} - select a component:
+      {{ translation.t(selectedSystem()?.nameKey ?? '') }}
+      {{ translation.t('tutorials.selectComponent') }}
     </p>
     <ul class="flex flex-wrap gap-2.5">
       @for (tutorial of filteredTutorials(); track tutorial.id) {
@@ -157,7 +158,7 @@
                 selectedTutorialId() !== tutorial.id,
             }"
           >
-            {{ tutorial.name }}
+            {{ translation.t(tutorial.nameKey) }}
           </button>
         </li>
       }
@@ -172,21 +173,21 @@
       <p
         class="font-display font-medium text-xl sm:text-2xl text-navy-dark dark:text-dark-text mb-3 sm:mb-4 transition-colors duration-300"
       >
-        Replacing {{ tutorial.name }}
+        {{ translation.t('tutorials.replacing') }} {{ translation.t(tutorial.nameKey) }}
       </p>
 
       <p
         class="font-body font-medium text-navy dark:text-dark-text text-base sm:text-xl mb-2.5 sm:mb-3 transition-colors duration-300"
       >
-        Tools needed
+        {{ translation.t('tutorials.toolsNeeded') }}
       </p>
       <ul class="flex flex-col gap-1 mb-5 sm:mb-6">
-        @for (tool of tutorial.tools; track tool) {
+        @for (toolKey of tutorial.toolKeys; track toolKey) {
           <li
             class="flex items-center gap-2.5 text-sm sm:text-lg text-navy-dark dark:text-dark-text transition-colors duration-300"
           >
             <span class="w-1.5 h-1.5 rounded-full bg-accent shrink-0"></span>
-            {{ tool }}
+            {{ translation.t(toolKey) }}
           </li>
         }
       </ul>
@@ -194,7 +195,7 @@
       <p
         class="font-body font-medium text-navy dark:text-dark-text text-base sm:text-xl mb-2.5 sm:mb-3 transition-colors duration-300"
       >
-        Steps
+        {{ translation.t('tutorials.steps') }}
       </p>
       <ul class="flex flex-col gap-3 sm:gap-4 mb-5 sm:mb-6">
         @for (step of tutorial.steps; track step.order) {
@@ -207,12 +208,12 @@
               <p
                 class="m-0 text-sm sm:text-lg text-navy-dark dark:text-dark-text leading-relaxed transition-colors duration-300"
               >
-                {{ step.text }}
+                {{ translation.t(step.textKey) }}
               </p>
               @if (step.image) {
                 <img
                   [src]="step.image"
-                  [alt]="step.text"
+                  [alt]="translation.t(step.textKey)"
                   class="mt-2.5 rounded-xl border border-silver-border dark:border-dark-border max-w-full transition-colors duration-300"
                 />
               }
@@ -222,12 +223,12 @@
       </ul>
 
       <ul class="flex flex-col gap-1.5">
-        @for (link of tutorial.links; track link.title) {
+        @for (link of tutorial.links; track link.titleKey) {
           <li>
             <a
               [href]="link.link"
               class="text-accent text-sm sm:text-lg no-underline hover:underline"
-              >{{ link.title }}</a
+              >{{ translation.t(link.titleKey) }}</a
             >
           </li>
         }
