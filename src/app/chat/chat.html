@@ -20,10 +20,9 @@
             ></svg>
           </span>
           <div
-            class="px-3 sm:px-3.5 py-2 sm:py-2.5 rounded-2xl rounded-tl-sm bg-white dark:bg-dark-bg border border-silver-border dark:border-dark-border text-navy-dark dark:text-dark-text text-sm leading-relaxed transition-colors duration-300"
-          >
-            {{ msg.text }}
-          </div>
+            class="px-3 sm:px-3.5 py-2 sm:py-2.5 rounded-2xl rounded-tl-sm bg-white dark:bg-dark-bg border border-silver-border dark:border-dark-border text-navy-dark dark:text-dark-text text-sm leading-relaxed transition-colors duration-300 prose-chat"
+            [innerHTML]="renderMarkdown(msg.text)"
+          ></div>
         </div>
       }
     }
